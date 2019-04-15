@@ -11,7 +11,7 @@ import UIKit
 public extension NSObject {
  // MARK: ------------------------- 判断设备机型 --------------
     /// 判断是否是齐刘海的机型
-     func zz_isIphonexType() -> Bool {
+    func zz_isIphonexType() -> Bool {
         guard #available(iOS 11.0, *) else {
             return false
         }
