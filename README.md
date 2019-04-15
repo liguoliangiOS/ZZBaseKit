@@ -22,7 +22,7 @@ pod 'ZZBaseKit'
 
 ## Author
 
-185226139@qq.com, ligl@chinamobiad.com
+liguoliang
 
 ## License
 

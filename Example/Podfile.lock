@@ -1,0 +1,16 @@
+PODS:
+  - ZZBaseKit (0.1.0)
+
+DEPENDENCIES:
+  - ZZBaseKit (from `../`)
+
+EXTERNAL SOURCES:
+  ZZBaseKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZZBaseKit: 337d13530bfafc42de08a3c4d13964e1ca8de29a
+
+PODFILE CHECKSUM: d01cf707a95120d5465ccf83ab61cb0f5d287581
+
+COCOAPODS: 1.6.1
