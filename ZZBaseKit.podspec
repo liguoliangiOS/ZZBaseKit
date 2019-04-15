@@ -29,14 +29,14 @@ Pod::Spec.new do |s|
                           LICENSE
                         }
   s.author           = 'liguoliang'
-  s.source           = { :http => 'https://github.com/liguoliangiOS/ZZBaseKit.git'}
+  s.source           = { :git => 'https://github.com/liguoliangiOS/ZZBaseKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.swift_version =  '5.0'
   s.ios.deployment_target = '8.0'
   s.platform = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'ZZBaseKit/BaseKit/**/*'
-  
+
   # s.resource_bundles = {
   #   'ZZBaseKit' => ['ZZBaseKit/Assets/*.png']
   # }
