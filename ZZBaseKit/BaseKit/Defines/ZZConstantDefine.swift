@@ -38,7 +38,7 @@ public var ZZ_WIDTH_SCALE_FACTOR:CGFloat {
 
 /** 屏幕高度比例系数 **/
 public var ZZ_HEIGHT_SCALE_FACTOR: CGFloat {
-    return zz_isIphonexType() ? (zz_isIphoneXR() ? 1.1 : 1.02) : (ZZ_SCREEN_HEIGHT / 667)
+    return zz_isIphonexType() ? (zz_isIphoneXR() ? 1.03 : 1.01) : (ZZ_SCREEN_HEIGHT / 667)
 }
 
 /** 导航栏高度 **/

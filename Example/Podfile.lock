@@ -1,5 +1,5 @@
 PODS:
-  - ZZBaseKit (0.1.0)
+  - ZZBaseKit (0.1.2)
 
 DEPENDENCIES:
   - ZZBaseKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZZBaseKit: 4dd600688b7ab888128d0bccc42e1ea658818e02
+  ZZBaseKit: 98e6d118db7fc29ac35762cc384fa48f77cb1457
 
 PODFILE CHECKSUM: d01cf707a95120d5465ccf83ab61cb0f5d287581
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.3

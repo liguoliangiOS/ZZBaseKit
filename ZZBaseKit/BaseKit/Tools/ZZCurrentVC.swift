@@ -24,8 +24,10 @@ public func zz_currentVCFromeView(_ view: UIView)-> UIViewController? {
 
 /// 根据根控制器，返回当前控制器
 public func zz_currentVC() -> UIViewController? {
-    let rootVC = UIApplication.shared.keyWindow?.rootViewController
-    return zz_mapGetCurrentVC(rootVC: rootVC!)
+    guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else {
+        return nil
+    }
+    return zz_mapGetCurrentVC(rootVC: rootVC)
 }
 
 
