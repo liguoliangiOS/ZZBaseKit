@@ -52,6 +52,33 @@ public extension UIButton {
         return button
     }
     
+    /**设置背景图片**/
+    class func zz_button(normalBackgroundImage:String, selectBackgroundImage:String, target:Any , action:Selector) -> UIButton {
+        let button:UIButton = UIButton(type: .custom)
+        button.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .normal)
+        button.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .highlighted)
+        button.setBackgroundImage(UIImage(named: selectBackgroundImage), for: .selected)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        return button
+    }
+    
+    /**设置图片**/
+    class func zz_button(image:String, target:Any , action:Selector) -> UIButton {
+        let button:UIButton = UIButton(type: .custom)
+        button.setImage(UIImage(named: image), for: .normal)
+        button.setImage(UIImage(named: image), for: .highlighted)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        return button
+    }
+    
+    class func zz_button(normalImage:String, selectImage:String, target:Any , action:Selector) -> UIButton {
+        let button:UIButton = UIButton(type: .custom)
+        button.setImage(UIImage(named: normalImage), for: .normal)
+        button.setImage(UIImage(named: normalImage), for: .highlighted)
+        button.setImage(UIImage(named: selectImage), for: .selected)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        return button
+    }
     
     ///实例
     
@@ -78,10 +105,24 @@ public extension UIButton {
         self.addTarget(target, action: action, for: .touchUpInside)
     }
     
+    func zz_button(_ normalBackgroundImage:String, _ selectBackgroundImage:String, _ target:Any ,_ action:Selector)  {
+        self.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .normal)
+        self.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .highlighted)
+        self.setBackgroundImage(UIImage(named: selectBackgroundImage), for: .selected)
+        self.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
     ///设置背景图片
     func zz_buttonImage(_ image:String, _ target:Any ,_ action:Selector)  {
         self.setImage(UIImage(named: image), for: .normal)
         self.setImage(UIImage(named: image), for: .highlighted)
+        self.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+    func zz_buttonImage(_ normalImage:String, _ selectImage:String, _ target:Any ,_ action:Selector)  {
+        self.setImage(UIImage(named: normalImage), for: .normal)
+        self.setImage(UIImage(named: normalImage), for: .highlighted)
+        self.setImage(UIImage(named: selectImage), for: .selected)
         self.addTarget(target, action: action, for: .touchUpInside)
     }
     

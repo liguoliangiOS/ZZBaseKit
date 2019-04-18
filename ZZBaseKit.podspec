@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZZBaseKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '方便使用的基础库'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/liguoliangiOS/ZZBaseKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          =  { :type => 'MIT', :text => <<-LICENSE
                           Copyright © 2019 ZZBaseKit
                           All rights reserved.
@@ -30,18 +29,11 @@ Pod::Spec.new do |s|
                         }
   s.author           = 'liguoliang'
   s.source           = { :git => 'https://github.com/liguoliangiOS/ZZBaseKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.swift_version =  '5.0'
   s.ios.deployment_target = '8.0'
-  s.platform = :ios, '8.0'
-  s.requires_arc = true
   s.source_files = 'ZZBaseKit/BaseKit/**/*'
 
-  # s.resource_bundles = {
-  #   'ZZBaseKit' => ['ZZBaseKit/Assets/*.png']
-  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit', 'AdSupport'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -9,15 +9,18 @@
 /* Begin PBXBuildFile section */
 		141B48E9AF7AD72140A2F1AD047EE076 /* ZZBaseKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2D985985791536E7FAC7FA350BE17E /* ZZBaseKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14CE319451C215F31E40A55A50DE48A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		218A8620226458DE00AA8AAC /* ZZFuncDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A861E226458DE00AA8AAC /* ZZFuncDefine.swift */; };
-		218A8621226458DE00AA8AAC /* ZZConstantDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A861F226458DE00AA8AAC /* ZZConstantDefine.swift */; };
-		218A8628226458E800AA8AAC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8622226458E800AA8AAC /* UIView+Extension.swift */; };
-		218A8629226458E800AA8AAC /* String+JudgeMent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8623226458E800AA8AAC /* String+JudgeMent.swift */; };
-		218A862A226458E800AA8AAC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8624226458E800AA8AAC /* UILabel+Extension.swift */; };
-		218A862B226458E800AA8AAC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8625226458E800AA8AAC /* UIImageView+Extension.swift */; };
-		218A862C226458E800AA8AAC /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8626226458E800AA8AAC /* UITextField+Extension.swift */; };
-		218A862D226458E800AA8AAC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A8627226458E800AA8AAC /* UIButton+Extension.swift */; };
-		218A862F226458EF00AA8AAC /* ZZOtherMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218A862E226458EF00AA8AAC /* ZZOtherMethod.swift */; };
+		2164E13A2266BE1800F9B336 /* ZZOtherMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E12E2266BE1800F9B336 /* ZZOtherMethod.swift */; };
+		2164E13B2266BE1800F9B336 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2164E12F2266BE1800F9B336 /* .gitkeep */; };
+		2164E13C2266BE1800F9B336 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1312266BE1800F9B336 /* UIImageView+Extension.swift */; };
+		2164E13D2266BE1800F9B336 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1322266BE1800F9B336 /* UILabel+Extension.swift */; };
+		2164E13E2266BE1800F9B336 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1332266BE1800F9B336 /* UIButton+Extension.swift */; };
+		2164E13F2266BE1800F9B336 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1342266BE1800F9B336 /* UIView+Extension.swift */; };
+		2164E1402266BE1800F9B336 /* String+JudgeMent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1352266BE1800F9B336 /* String+JudgeMent.swift */; };
+		2164E1412266BE1800F9B336 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1362266BE1800F9B336 /* UITextField+Extension.swift */; };
+		2164E1422266BE1800F9B336 /* ZZFuncDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1382266BE1800F9B336 /* ZZFuncDefine.swift */; };
+		2164E1432266BE1800F9B336 /* ZZConstantDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2164E1392266BE1800F9B336 /* ZZConstantDefine.swift */; };
+		21F6A36A226866C1006C5BA7 /* ZZCurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A369226866C1006C5BA7 /* ZZCurrentVC.swift */; };
+		21F6A36C226866DB006C5BA7 /* ZZAlertSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A36B226866DB006C5BA7 /* ZZAlertSystemView.swift */; };
 		2382C115CE30395F587FF1694BA891DB /* Pods-ZZBaseKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52642135EED8ACFF577CC63AD82213B2 /* Pods-ZZBaseKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CA839E9C840F1E66BD8379197F13FC0 /* Pods-ZZBaseKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 630C6A3753FD260C362B6D735FD6786D /* Pods-ZZBaseKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71863A05FF831AB793787E4CC134B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
@@ -49,15 +52,18 @@
 		1387F5BB2FE49E118667FDD318EF7808 /* Pods-ZZBaseKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZZBaseKit_Example.modulemap"; sourceTree = "<group>"; };
 		1E4CFD754F92DA32C153076FBE3B3168 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F979E647C724992DC26491B4C5DB775 /* Pods-ZZBaseKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZZBaseKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		218A861E226458DE00AA8AAC /* ZZFuncDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZFuncDefine.swift; path = ../../ZZBaseKit/BaseKit/Defines/ZZFuncDefine.swift; sourceTree = "<group>"; };
-		218A861F226458DE00AA8AAC /* ZZConstantDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZConstantDefine.swift; path = ../../ZZBaseKit/BaseKit/Defines/ZZConstantDefine.swift; sourceTree = "<group>"; };
-		218A8622226458E800AA8AAC /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/UIView+Extension.swift"; sourceTree = "<group>"; };
-		218A8623226458E800AA8AAC /* String+JudgeMent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+JudgeMent.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/String+JudgeMent.swift"; sourceTree = "<group>"; };
-		218A8624226458E800AA8AAC /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Extension.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/UILabel+Extension.swift"; sourceTree = "<group>"; };
-		218A8625226458E800AA8AAC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extension.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		218A8626226458E800AA8AAC /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/UITextField+Extension.swift"; sourceTree = "<group>"; };
-		218A8627226458E800AA8AAC /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "../../ZZBaseKit/BaseKit/Extensions/UIButton+Extension.swift"; sourceTree = "<group>"; };
-		218A862E226458EF00AA8AAC /* ZZOtherMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZOtherMethod.swift; path = ../../ZZBaseKit/BaseKit/Tools/ZZOtherMethod.swift; sourceTree = "<group>"; };
+		2164E12E2266BE1800F9B336 /* ZZOtherMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZOtherMethod.swift; sourceTree = "<group>"; };
+		2164E12F2266BE1800F9B336 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		2164E1312266BE1800F9B336 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		2164E1322266BE1800F9B336 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		2164E1332266BE1800F9B336 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		2164E1342266BE1800F9B336 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2164E1352266BE1800F9B336 /* String+JudgeMent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JudgeMent.swift"; sourceTree = "<group>"; };
+		2164E1362266BE1800F9B336 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		2164E1382266BE1800F9B336 /* ZZFuncDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFuncDefine.swift; sourceTree = "<group>"; };
+		2164E1392266BE1800F9B336 /* ZZConstantDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZConstantDefine.swift; sourceTree = "<group>"; };
+		21F6A369226866C1006C5BA7 /* ZZCurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZCurrentVC.swift; sourceTree = "<group>"; };
+		21F6A36B226866DB006C5BA7 /* ZZAlertSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZAlertSystemView.swift; sourceTree = "<group>"; };
 		280BF37A1FD83DCA3021895AD87DBD86 /* ZZBaseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZZBaseKit.modulemap; sourceTree = "<group>"; };
 		28B3B1B2296AB82131455BB5D9ADE57C /* Pods-ZZBaseKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZZBaseKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		344D80E0DE8B3B69D7710BC2D14572C9 /* ZZBaseKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZZBaseKit-Info.plist"; sourceTree = "<group>"; };
@@ -129,42 +135,46 @@
 			path = "Example/Pods/Target Support Files/ZZBaseKit";
 			sourceTree = "<group>";
 		};
-		218A86082264583B00AA8AAC /* BaseKit */ = {
+		2164E12C2266BE1800F9B336 /* BaseKit */ = {
 			isa = PBXGroup;
 			children = (
-				218A86092264583B00AA8AAC /* Tools */,
-				218A860B2264583B00AA8AAC /* Extensions */,
-				218A86122264583B00AA8AAC /* Defines */,
+				2164E12D2266BE1800F9B336 /* Tools */,
+				2164E12F2266BE1800F9B336 /* .gitkeep */,
+				2164E1302266BE1800F9B336 /* Extensions */,
+				2164E1372266BE1800F9B336 /* Defines */,
 			);
-			path = BaseKit;
+			name = BaseKit;
+			path = ZZBaseKit/BaseKit;
 			sourceTree = "<group>";
 		};
-		218A86092264583B00AA8AAC /* Tools */ = {
+		2164E12D2266BE1800F9B336 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				218A862E226458EF00AA8AAC /* ZZOtherMethod.swift */,
+				2164E12E2266BE1800F9B336 /* ZZOtherMethod.swift */,
+				21F6A369226866C1006C5BA7 /* ZZCurrentVC.swift */,
+				21F6A36B226866DB006C5BA7 /* ZZAlertSystemView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		218A860B2264583B00AA8AAC /* Extensions */ = {
+		2164E1302266BE1800F9B336 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				218A8623226458E800AA8AAC /* String+JudgeMent.swift */,
-				218A8627226458E800AA8AAC /* UIButton+Extension.swift */,
-				218A8625226458E800AA8AAC /* UIImageView+Extension.swift */,
-				218A8624226458E800AA8AAC /* UILabel+Extension.swift */,
-				218A8626226458E800AA8AAC /* UITextField+Extension.swift */,
-				218A8622226458E800AA8AAC /* UIView+Extension.swift */,
+				2164E1312266BE1800F9B336 /* UIImageView+Extension.swift */,
+				2164E1322266BE1800F9B336 /* UILabel+Extension.swift */,
+				2164E1332266BE1800F9B336 /* UIButton+Extension.swift */,
+				2164E1342266BE1800F9B336 /* UIView+Extension.swift */,
+				2164E1352266BE1800F9B336 /* String+JudgeMent.swift */,
+				2164E1362266BE1800F9B336 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		218A86122264583B00AA8AAC /* Defines */ = {
+		2164E1372266BE1800F9B336 /* Defines */ = {
 			isa = PBXGroup;
 			children = (
-				218A861F226458DE00AA8AAC /* ZZConstantDefine.swift */,
-				218A861E226458DE00AA8AAC /* ZZFuncDefine.swift */,
+				2164E1382266BE1800F9B336 /* ZZFuncDefine.swift */,
+				2164E1392266BE1800F9B336 /* ZZConstantDefine.swift */,
 			);
 			path = Defines;
 			sourceTree = "<group>";
@@ -198,7 +208,7 @@
 		8FB383A3EDC12C321F3917A2D43832B5 /* ZZBaseKit */ = {
 			isa = PBXGroup;
 			children = (
-				218A86082264583B00AA8AAC /* BaseKit */,
+				2164E12C2266BE1800F9B336 /* BaseKit */,
 				5FEDF1D2DA26328569C71AF04965A65A /* Pod */,
 				026F6C85EF6CB0464DB8D31C5490F7C0 /* Support Files */,
 			);
@@ -416,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2164E13B2266BE1800F9B336 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,16 +453,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218A8629226458E800AA8AAC /* String+JudgeMent.swift in Sources */,
-				218A8621226458DE00AA8AAC /* ZZConstantDefine.swift in Sources */,
-				218A862B226458E800AA8AAC /* UIImageView+Extension.swift in Sources */,
-				218A862A226458E800AA8AAC /* UILabel+Extension.swift in Sources */,
-				218A8620226458DE00AA8AAC /* ZZFuncDefine.swift in Sources */,
-				218A862D226458E800AA8AAC /* UIButton+Extension.swift in Sources */,
-				218A862C226458E800AA8AAC /* UITextField+Extension.swift in Sources */,
-				218A862F226458EF00AA8AAC /* ZZOtherMethod.swift in Sources */,
-				218A8628226458E800AA8AAC /* UIView+Extension.swift in Sources */,
+				21F6A36A226866C1006C5BA7 /* ZZCurrentVC.swift in Sources */,
+				2164E1432266BE1800F9B336 /* ZZConstantDefine.swift in Sources */,
+				2164E13F2266BE1800F9B336 /* UIView+Extension.swift in Sources */,
+				2164E1402266BE1800F9B336 /* String+JudgeMent.swift in Sources */,
+				2164E13D2266BE1800F9B336 /* UILabel+Extension.swift in Sources */,
+				2164E13C2266BE1800F9B336 /* UIImageView+Extension.swift in Sources */,
+				2164E1422266BE1800F9B336 /* ZZFuncDefine.swift in Sources */,
 				781C2F806794EBBEBCCA0CDAA2D63CD5 /* ZZBaseKit-dummy.m in Sources */,
+				2164E1412266BE1800F9B336 /* UITextField+Extension.swift in Sources */,
+				2164E13E2266BE1800F9B336 /* UIButton+Extension.swift in Sources */,
+				21F6A36C226866DB006C5BA7 /* ZZAlertSystemView.swift in Sources */,
+				2164E13A2266BE1800F9B336 /* ZZOtherMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
