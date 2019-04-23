@@ -11,6 +11,46 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+
+## Version new features
+
+v0.1.3   
+       
+ZZAlertSystemView  封装了系统弹窗   
+        
+    ``` 
+    例如：显示一个弹窗
+    ZZAlertSystemView.zz_alertSystem(nil, "这是一个提示")
+    ```
+    
+ZZCurrentVC   封装了获取当前控制器的方法 
+
+    ``` 
+    例如： 获取当前控制器
+    zz_currentVC()
+    zz_currentVCFromeView(view)
+           
+    ```
+     
+     
+v 0.1.4 
+
+ZZDeviceInfo 获取设备信息
+      
+    ``` 
+    例如：获取运营商名称   
+    ZZDeviceInfo.zz_getDeviceSupplier() 
+      
+    ```
+     
+ZZAttributedStr 设置字符串的样式
+      
+    ```
+    例如：设置字符串的行高   
+    ZZAttributedStr.zz_setLineHeight("这是一个测试数据", 8, .center)
+
+    ```
+
 ## Installation
 
 ZZBaseKit is available through [CocoaPods](https://cocoapods.org). To install

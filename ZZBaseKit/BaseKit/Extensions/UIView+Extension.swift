@@ -94,23 +94,25 @@ public extension UIView {
     
     
     /// 水平渐变
-    func zz_setHorizontalGradientLayer(_ startColor: UIColor, _ endColor: UIColor) {
+    func zz_setHorizontalGradientLayer(_ startColor: UIColor, _ endColor: UIColor, _ cornerRadius:CGFloat) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [startColor.cgColor, endColor.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 0)
-        self.layer.addSublayer(gradient)
+        gradient.cornerRadius = cornerRadius
+        self.layer.insertSublayer(gradient, at: 0)
     }
     
     /// 垂直渐变
-   func zz_setVerticalGradientLayer(_ startColor: UIColor, _ endColor: UIColor) {
+   func zz_setVerticalGradientLayer(_ startColor: UIColor, _ endColor: UIColor, _ cornerRadius:CGFloat) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [startColor.cgColor, endColor.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
-        self.layer.addSublayer(gradient)
+        gradient.cornerRadius = cornerRadius
+        self.layer.insertSublayer(gradient, at: 0)
     }
     
     /// 部分圆角

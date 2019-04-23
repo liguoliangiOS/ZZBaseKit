@@ -74,3 +74,41 @@ public func zz_openUrl(_ url: URL) -> Bool {
     return false
 }
 
+///跳转Dic -> JsonStr
+public func zz_dicToJsonStr(_ dic: [String: Any]) -> String? {
+    do {
+        let jsonData = try  JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
+        let jsonS = String(data: jsonData, encoding: .utf8)
+        return jsonS!
+    } catch  {
+        print(error)
+    }
+    return nil
+}
+
+///跳转JsonStr -> Dic
+public func zz_jsonStrToDic(_ jsonStr: String) -> [String: Any]? {
+    if jsonStr.count > 0 {
+        let data = jsonStr.data(using: .utf8)
+        do {
+            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            return (json as! [String: Any])
+        } catch {
+            print(error)
+        }
+    }
+    return nil
+}
+
+///跳转appStore评分
+public func zz_appStoreComment(_ appId: String) {
+    let urlStr = "itms-apps://itunes.apple.com/app/id\(appId)?action=write-review"
+    let openUrl = URL(string: urlStr)!
+    if UIApplication.shared.canOpenURL(openUrl) {
+        if #available(iOS 10.0, *)  {
+            UIApplication.shared.open(openUrl, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(openUrl)
+        }
+    }
+}
