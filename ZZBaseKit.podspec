@@ -36,20 +36,21 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.subspec 'Defines' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/Defines'
+  end
+  
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'ZZBaseKit/BaseKit/Extensions'
   end
   
-  s.subspec 'Defines' do |ss|
-    ss.source_files = 'ZZBaseKit/BaseKit/Defines'
-  end
-  
-  s.subspec 'Defines' do |ss|
-    ss.source_files = 'ZZBaseKit/BaseKit/Defines'
-  end
-  
   s.subspec 'Tools' do |ss|
+    ss.dependency 'ZZBaseKit/Defines'
+    ss.dependency 'ZZBaseKit/Extensions'
     ss.source_files = 'ZZBaseKit/BaseKit/Tools'
   end
+  
+ 
   
 end
