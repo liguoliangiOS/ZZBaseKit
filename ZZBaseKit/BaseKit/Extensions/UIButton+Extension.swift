@@ -12,8 +12,7 @@ public extension UIButton {
     
     /**设置标题点击**/
     class func zz_button(title:String, titleColor:UIColor, font:UIFont, target:Any , action:Selector) -> UIButton {
-        
-        let button:UIButton = UIButton(type: .custom)
+        let button = self.init(type: .custom)
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
         button.titleLabel?.font = font
@@ -22,7 +21,7 @@ public extension UIButton {
     }
     /**设置圆角和标题**/
     class func zz_button(title:String, titleColor:UIColor, font:UIFont, cornerRadius:CGFloat, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton.zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
+        let button = zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
         button.layer.masksToBounds = true
         button.layer.cornerRadius =  cornerRadius
         return button
@@ -30,14 +29,13 @@ public extension UIButton {
     /**设置背景颜色和标题**/
     class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundColor:UIColor, cornerRadius:CGFloat, target:Any , action:Selector) -> UIButton {
         
-        
-        let button:UIButton = UIButton.zz_button(title: title, titleColor: titleColor, font: font ,cornerRadius:cornerRadius, target:target, action:action)
+        let button = zz_button(title: title, titleColor: titleColor, font: font ,cornerRadius:cornerRadius, target:target, action:action)
         button.backgroundColor = backgroundColor
         return button
     }
     /**设置背景图片和标题**/
      class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundImage:String, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton.zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
+        let button = zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .normal)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .highlighted)
         return button
@@ -45,7 +43,7 @@ public extension UIButton {
     
     /**设置背景图片**/
     class func zz_button(backgroundImage:String, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton(type: .custom)
+        let button = self.init(type: .custom)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .normal)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .highlighted)
         button.addTarget(target, action: action, for: .touchUpInside)
@@ -54,7 +52,7 @@ public extension UIButton {
     
     /**设置背景图片**/
     class func zz_button(normalBackgroundImage:String, selectBackgroundImage:String, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton(type: .custom)
+        let button = self.init(type: .custom)
         button.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .normal)
         button.setBackgroundImage(UIImage(named: normalBackgroundImage), for: .highlighted)
         button.setBackgroundImage(UIImage(named: selectBackgroundImage), for: .selected)
@@ -64,7 +62,7 @@ public extension UIButton {
     
     /**设置图片**/
     class func zz_button(image:String, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton(type: .custom)
+        let button = self.init(type: .custom)
         button.setImage(UIImage(named: image), for: .normal)
         button.setImage(UIImage(named: image), for: .highlighted)
         button.addTarget(target, action: action, for: .touchUpInside)
@@ -72,7 +70,7 @@ public extension UIButton {
     }
     
     class func zz_button(normalImage:String, selectImage:String, target:Any , action:Selector) -> UIButton {
-        let button:UIButton = UIButton(type: .custom)
+        let button = self.init(type: .custom)
         button.setImage(UIImage(named: normalImage), for: .normal)
         button.setImage(UIImage(named: normalImage), for: .highlighted)
         button.setImage(UIImage(named: selectImage), for: .selected)

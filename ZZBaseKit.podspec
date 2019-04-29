@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZZBaseKit'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '方便使用的基础库'
 
 # This description is used to generate tags and improve search results.
@@ -31,9 +31,25 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/liguoliangiOS/ZZBaseKit.git', :tag => s.version.to_s }
   s.swift_version =  '5.0'
   s.ios.deployment_target = '8.0'
-  s.source_files = 'ZZBaseKit/BaseKit/**/*'
+#  s.source_files = 'ZZBaseKit/BaseKit/**/*'
 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'Extensions' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/Extensions'
+  end
+  
+  s.subspec 'Defines' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/Defines'
+  end
+  
+  s.subspec 'Defines' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/Defines'
+  end
+  
+  s.subspec 'Tools' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/Tools'
+  end
+  
 end

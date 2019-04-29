@@ -14,11 +14,11 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ZZAlertSystemView.zz_alertSystem(nil, "这是一个提示")
+        
     }
     
-   
     
-    
+
 
     /*
     // MARK: - Navigation

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ZZAttributedStr: NSObject {
+open class ZZAttributedStr: NSObject {
     
     ///修改指定文字的字体大小 和 颜色
    public class func zz_setRangeText(_ text: String, _ changeText: String, _ changeColor: UIColor, _ changeFont: UIFont) -> NSAttributedString  {

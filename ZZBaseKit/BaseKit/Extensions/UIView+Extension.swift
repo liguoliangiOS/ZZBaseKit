@@ -67,13 +67,13 @@ public extension UIView {
     }
     
     class func zz_view(_ backgroundColor: UIColor) -> UIView {
-        let view = UIView()
+        let view = self.init()
         view.backgroundColor = backgroundColor
         return view
     }
     
     class func zz_view(_ backgroundColor: UIColor, _ cornerRadius: CGFloat) -> UIView {
-        let view = UIView()
+        let view = self.init()
         view.backgroundColor = backgroundColor
         view.layer.masksToBounds = true
         view.layer.cornerRadius = cornerRadius
@@ -92,6 +92,18 @@ public extension UIView {
         self.layer.cornerRadius = cornerRadius
     }
     
+    
+    func zz_viewGetcurrentVC() -> UIViewController? {
+        var nextResponder: UIResponder? = self
+        repeat {
+            nextResponder = nextResponder?.next
+            if let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+        } while nextResponder != nil
+        
+        return nil
+    }
     
     /// 水平渐变
     func zz_setHorizontalGradientLayer(_ startColor: UIColor, _ endColor: UIColor, _ cornerRadius:CGFloat) {

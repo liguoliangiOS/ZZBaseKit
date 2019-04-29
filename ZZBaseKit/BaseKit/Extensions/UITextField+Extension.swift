@@ -12,7 +12,7 @@ public extension UITextField {
     
     /** 快速创建 textField **/
     class func zz_textField(textColor: UIColor, font: UIFont, placeholder: String) -> UITextField {
-        let textField:UITextField = UITextField()
+        let textField = self.init()
         textField.textColor = textColor
         textField.font = font
         textField.placeholder = placeholder
@@ -50,9 +50,9 @@ public extension UITextField {
     }
     
     /** 创建 修改UITextField的清除按钮 **/
-    func zz_textFieldChangeClearButton() {
+    func zz_textFieldChangeClearButton(_ imageName: String) {
         let cleaButton:UIButton =  self.value(forKey: "_clearButton") as! UIButton
-        cleaButton.setImage(UIImage(named: "zz_denglu_clear_image"), for: .normal)
+        cleaButton.setImage(UIImage(named: imageName), for: .normal)
         self.clearButtonMode = .whileEditing
     }
 }

@@ -10,6 +10,12 @@ import UIKit
 
 
 public extension String {
+    ///处理 输入表情符号的时候 count 跟 oc里面的字符串length长度不一致的问题
+    var length: Int {
+        get {
+            return self.utf16.count
+        }
+    }
     
      /////判断手机号是否规范
     var zz_isMobileNumber: Bool {
@@ -60,7 +66,7 @@ public extension String {
     }
     
     
-    private func zz_characterSetWithStr(_ characterStr: String, _ judgeText: String) -> Bool {
+    func zz_characterSetWithStr(_ characterStr: String, _ judgeText: String) -> Bool {
         let characterSet = NSCharacterSet(charactersIn: characterStr).inverted
         let filterArr:[String] = judgeText.components(separatedBy: characterSet)
         let filterstr:String = filterArr.joined(separator: "")

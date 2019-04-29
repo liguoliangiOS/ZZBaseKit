@@ -1,5 +1,11 @@
 PODS:
-  - ZZBaseKit (0.1.2)
+  - ZZBaseKit (0.1.4):
+    - ZZBaseKit/Defines (= 0.1.4)
+    - ZZBaseKit/Extensions (= 0.1.4)
+    - ZZBaseKit/Tools (= 0.1.4)
+  - ZZBaseKit/Defines (0.1.4)
+  - ZZBaseKit/Extensions (0.1.4)
+  - ZZBaseKit/Tools (0.1.4)
 
 DEPENDENCIES:
   - ZZBaseKit (from `../`)
@@ -9,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZZBaseKit: 98e6d118db7fc29ac35762cc384fa48f77cb1457
+  ZZBaseKit: ee4dd7a2aaff08dc621f25d5fc3a84709d0e0970
 
 PODFILE CHECKSUM: d01cf707a95120d5465ccf83ab61cb0f5d287581
 

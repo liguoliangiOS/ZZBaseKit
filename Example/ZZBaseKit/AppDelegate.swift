@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@_exported import ZZBaseKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = UINavigationController(rootViewController: TestViewController())
         self.window?.makeKeyAndVisible()
-
         return true
     }
 

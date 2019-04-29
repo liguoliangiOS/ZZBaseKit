@@ -10,7 +10,7 @@ import UIKit
 public typealias ZZAlertSystemSelectBlock = (_ selectIndex: Int) -> Void
 
 ///系统的alertView
-public class ZZAlertSystemView: NSObject {
+public class ZZAlertSystemView: UIView {
     
     ///没有按钮
    public class func zz_alertSystem(_ title: String? , _ message: String) {

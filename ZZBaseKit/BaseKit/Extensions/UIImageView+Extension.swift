@@ -10,7 +10,7 @@ public extension UIImageView {
     
     /** 设置image **/
     class func zz_imagView(imageName:String) -> UIImageView {
-        let imageView:UIImageView = UIImageView()
+        let imageView = self.init()
         if imageName.count > 0 {
             imageView.image = UIImage(named: imageName)
         }
@@ -19,7 +19,7 @@ public extension UIImageView {
     
     /** 创建imageView 有圆角 **/
     class func zz_imagView(imageName:String, cornerRadius:CGFloat) -> UIImageView {
-        let imageView:UIImageView = UIImageView.zz_imagView(imageName: imageName)
+        let imageView = zz_imagView(imageName: imageName)
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = cornerRadius
         return imageView

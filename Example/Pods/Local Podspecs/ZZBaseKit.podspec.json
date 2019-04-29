@@ -1,6 +1,6 @@
 {
   "name": "ZZBaseKit",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "summary": "方便使用的基础库",
   "description": "把常用的方法做了一个整合，形成一个方便使用的基础库",
   "homepage": "https://github.com/liguoliangiOS/ZZBaseKit",
@@ -11,11 +11,28 @@
   "authors": "liguoliang",
   "source": {
     "git": "https://github.com/liguoliangiOS/ZZBaseKit.git",
-    "tag": "0.1.2"
+    "tag": "0.1.4"
   },
   "swift_versions": "5.0",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZZBaseKit/BaseKit/**/*"
+  "subspecs": [
+    {
+      "name": "Extensions",
+      "source_files": "ZZBaseKit/BaseKit/Extensions"
+    },
+    {
+      "name": "Defines",
+      "source_files": "ZZBaseKit/BaseKit/Defines"
+    },
+    {
+      "name": "Defines",
+      "source_files": "ZZBaseKit/BaseKit/Defines"
+    },
+    {
+      "name": "Tools",
+      "source_files": "ZZBaseKit/BaseKit/Tools"
+    }
+  ]
 }
