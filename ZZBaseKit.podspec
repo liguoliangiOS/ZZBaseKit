@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZZBaseKit'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '方便使用的基础库'
 
 # This description is used to generate tags and improve search results.
@@ -46,11 +46,22 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Tools' do |ss|
-    ss.dependency 'ZZBaseKit/Defines'
-    ss.dependency 'ZZBaseKit/Extensions'
     ss.source_files = 'ZZBaseKit/BaseKit/Tools'
   end
   
- 
+  s.subspec 'DeviceInfo' do |ss|
+    ss.source_files = 'ZZBaseKit/BaseKit/DeviceInfo'
+  end
+  
+  s.subspec 'Component' do |ss|
+    ss.dependency 'ZZBaseKit/Defines'
+    ss.dependency 'ZZBaseKit/Extensions'
+    ss.dependency 'ZZBaseKit/Tools'
+    ss.dependency 'ZZBaseKit/DeviceInfo'
+
+    ss.source_files = 'ZZBaseKit/BaseKit/Component'
+  end
+  
+  
   
 end

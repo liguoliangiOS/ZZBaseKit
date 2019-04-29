@@ -1,11 +1,18 @@
 PODS:
-  - ZZBaseKit (0.1.4):
-    - ZZBaseKit/Defines (= 0.1.4)
-    - ZZBaseKit/Extensions (= 0.1.4)
-    - ZZBaseKit/Tools (= 0.1.4)
-  - ZZBaseKit/Defines (0.1.4)
-  - ZZBaseKit/Extensions (0.1.4)
-  - ZZBaseKit/Tools (0.1.4)
+  - ZZBaseKit (0.1.5):
+    - ZZBaseKit/Component (= 0.1.5)
+    - ZZBaseKit/Defines (= 0.1.5)
+    - ZZBaseKit/DeviceInfo (= 0.1.5)
+    - ZZBaseKit/Extensions (= 0.1.5)
+    - ZZBaseKit/Tools (= 0.1.5)
+  - ZZBaseKit/Component (0.1.5):
+    - ZZBaseKit/Defines
+    - ZZBaseKit/Extensions
+    - ZZBaseKit/Tools
+  - ZZBaseKit/Defines (0.1.5)
+  - ZZBaseKit/DeviceInfo (0.1.5)
+  - ZZBaseKit/Extensions (0.1.5)
+  - ZZBaseKit/Tools (0.1.5)
 
 DEPENDENCIES:
   - ZZBaseKit (from `../`)
@@ -15,7 +22,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZZBaseKit: ee4dd7a2aaff08dc621f25d5fc3a84709d0e0970
+  ZZBaseKit: c4d49b60d16c366cc67481121a9b52e935b0d895
 
 PODFILE CHECKSUM: d01cf707a95120d5465ccf83ab61cb0f5d287581
 

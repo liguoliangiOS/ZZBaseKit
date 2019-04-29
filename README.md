@@ -50,6 +50,27 @@ ZZAttributedStr 设置字符串的样式
     ZZAttributedStr.zz_setLineHeight("这是一个测试数据", 8, .center)
 
     ```
+v 0.1.6 
+
+增加 ZZWKWebVC 、ZZShowError
+
+    ```
+    let webVc = ZZWKWebController()
+
+    webVc.url = "https://www.baidu.com"
+    webVc.loadType = .rules 
+    
+    ///.interaction 需要实现下面的方法
+
+    webVc.zz_wkWebLoadCompletionHandler(block: {
+        (count, url) in
+        print("\(count) --- \( url)")
+        })
+    webVc.zz_wkWebSetParams(phone: "13233258888", aesPhone: "X/A+jXMnFGS81LZjC7XTmw==",userLoginId: "12233", umDeviceToken: "sdcdfvfgbvghfbdsvdfgdrbvsdfvtgbdfgbvfg")
+        
+    self.navigationController?.pushViewController(webVc, animated: true)
+
+    ```
 
 ## Installation
 

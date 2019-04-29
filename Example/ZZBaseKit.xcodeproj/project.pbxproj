@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21605F992276E123009E19A3 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21605F982276E123009E19A3 /* test.swift */; };
 		21F6A39222687916006C5BA7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6A39122687916006C5BA7 /* TestViewController.swift */; };
 		46482261420AB71A2EA559E2 /* Pods_ZZBaseKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4831E87536A12E9552E48112 /* Pods_ZZBaseKit_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		047DF1CF9752396DD1F63A3F /* Pods-ZZBaseKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZBaseKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZZBaseKit_Example/Pods-ZZBaseKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		21605F982276E123009E19A3 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		21F6A39122687916006C5BA7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4831E87536A12E9552E48112 /* Pods_ZZBaseKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBaseKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ZZBaseKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBaseKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				21F6A39122687916006C5BA7 /* TestViewController.swift */,
+				21605F982276E123009E19A3 /* test.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				21605F992276E123009E19A3 /* test.swift in Sources */,
 				21F6A39222687916006C5BA7 /* TestViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

@@ -36,7 +36,7 @@ public func zz_isIphoneXR() -> Bool {
     return false
 }
 
-/// 判断是否是iPhone Xr
+/// 判断是否是iPhone XSMAX
 public func zz_isIphoneXSMAX() -> Bool {
     let phoneSize = UIScreen.main.currentMode?.size
     if (phoneSize?.equalTo(CGSize(width: 1242, height: 2688)))!  && !zz_isIpad() {
@@ -147,3 +147,12 @@ public func zz_getUserDefaults(_ key: String) -> String? {
 
 }
 
+// MARK: -------------------------- 获取图片的高度 --------------------------
+
+public func zz_scaleImageHeight(_ width:CGFloat, _ height:CGFloat, _ realWidth:CGFloat) -> CGFloat {
+    let imageH:CGFloat = height / ZZ_SCREEN_SCALE;
+    let imageW:CGFloat =  width / ZZ_SCREEN_SCALE;
+    let realImageH:CGFloat = imageH * (realWidth / imageW)
+    let realH:CGFloat = zz_isIphonexType() ?  24 : 0
+    return realH + realImageH;
+}

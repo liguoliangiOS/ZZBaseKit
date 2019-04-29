@@ -10,16 +10,12 @@ import UIKit
 import AdSupport
 
 
-
 // MARK: ------------------------- 常用的值 --------------
 /** 屏幕宽度 **/
+
 public var ZZ_SCREEN_WIDTH: CGFloat {
     return UIScreen.main.bounds.width
 }
-
-public let ZZ_SCREEN_WIDTH1 = UIScreen.main.bounds.width
-
-//var zz = UIScreen.main.bounds.width
 
 /** 屏幕高度 **/
 public var ZZ_SCREEN_HEIGHT: CGFloat {

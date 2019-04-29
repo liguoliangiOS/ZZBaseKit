@@ -1,5 +1,5 @@
 //
-//  String+JudgeMent.swift
+//  String+Extension.swift
 //  ZZBaseKit
 //
 //  Created by Passer on 2019/4/13.
@@ -77,4 +77,47 @@ public extension String {
         return false
     }
     
+    
+}
+
+
+// MARK: NSAttributedString
+public extension String {
+    
+    ///修改指定文字的字体大小 和 颜色
+    func zz_setRangeText(_ changeText: String, _ changeColor: UIColor, _ changeFont: UIFont) -> NSAttributedString  {
+        let attributStr = NSMutableAttributedString(string: self)
+        let textStr = self as NSString
+        let range = textStr.range(of: changeText)
+        attributStr.addAttribute(NSAttributedString.Key.font, value: changeFont, range: range)
+        attributStr.addAttribute(NSAttributedString.Key.foregroundColor, value: changeColor, range: range)
+        return attributStr
+    }
+    
+    ///设置行间距
+    func zz_setLineHeight(_ lineHeight: CGFloat, _ alignment:   NSTextAlignment) -> NSAttributedString {
+        let attributStr = NSMutableAttributedString(string: self)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineHeight
+        paragraphStyle.alignment = alignment;//文本对齐方式
+        attributStr.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: self.count))
+        return attributStr
+    }
+    
+    ///设置指定范围内文字的颜色
+    func zz_setRangeTextColor( range: NSRange, changeColor: UIColor) -> NSAttributedString {
+        let attributStr = NSMutableAttributedString(string: self)
+        attributStr.addAttribute(NSAttributedString.Key.foregroundColor, value: changeColor, range: range)
+        return attributStr
+    }
+    
+    
+    ///设置指定范围内文字的下划线 颜色
+    func zz_setRangeUnderLine( _ range: NSRange, _ rangeColor: UIColor, _ lineColor:UIColor)  -> NSAttributedString {
+        let attributStr = NSMutableAttributedString(string: self)
+        attributStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        attributStr.addAttribute(NSAttributedString.Key.foregroundColor, value: rangeColor, range: range)
+        attributStr.addAttribute(NSAttributedString.Key.underlineColor, value: lineColor, range: range)
+        return attributStr
+    }
 }
