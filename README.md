@@ -71,6 +71,25 @@ v 0.1.6
     self.navigationController?.pushViewController(webVc, animated: true)
 
     ```
+v 0.1.7
+
+1.增加 KeyChain 保存数据到钥匙串 
+2. 修复webView链接的处理 
+3. 适配系数修改
+   
+   
+    ```
+    //使用介绍
+    ///保存
+    let result =  ZZKeyChain.zz_keyChainSaveDta(account: "Passer", password: "Montanus", data: ["idfa": ZZ_APP_IDFA])
+    ///获取
+    let searchData = ZZKeyChain.zz_keyChainReadData(account: "Passer", password: "Montanus")
+    ///修改
+    ZZKeyChain.zz_keyChainUpdateData(account: "Passer", password: "Montanus", data: searnewDic)
+    ///删除
+    ZZKeyChain.zz_keychainDelete(account: "Passer", password: "Montanus")
+    
+    ```
 
 ## Installation
 

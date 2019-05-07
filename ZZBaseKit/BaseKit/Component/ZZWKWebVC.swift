@@ -270,10 +270,9 @@ extension ZZWKWebVC {
     
     private func wk_strToUtf8(_ str: String) ->  String {
         if str.count > 0 {
-            let userved = "!NULL,'()*+,-./:;=?@_~%#[]"
-            let allowed = NSMutableCharacterSet(charactersIn: userved)
-            let urlStr = str.addingPercentEncoding(withAllowedCharacters:allowed as CharacterSet)
-            return urlStr!
+            let stri = str as NSString
+            let urlStr = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, stri as CFString, "!NULL,'()*+,-./:;=?@_~%#[]" as CFString, nil, CFStringBuiltInEncodings.UTF8.rawValue)
+            return urlStr! as String
         }
         return str
     }

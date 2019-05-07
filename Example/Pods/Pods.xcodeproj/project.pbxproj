@@ -10,6 +10,7 @@
 		029823F278A217A069E33FBC293F68F6 /* ZZDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394E6FEE7B23699CD1C8CD12342797A /* ZZDeviceInfo.swift */; };
 		14CE319451C215F31E40A55A50DE48A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		1AD02002FC18F30DB72EA2651856B60A /* ZZConstantDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D9FF203F0F3C5C27E548D440C79C /* ZZConstantDefine.swift */; };
+		218F207722816B6C0065F57F /* ZZKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F207622816B6C0065F57F /* ZZKeyChain.swift */; };
 		2382C115CE30395F587FF1694BA891DB /* Pods-ZZBaseKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24748E08A2D37330E2D0B890EE6914E3 /* Pods-ZZBaseKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		355B85982AE57532E0BA08B6391AE894 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BCE2C82177EB7C469A102703C19AE6 /* UIButton+Extension.swift */; };
 		4CFD83FB022B7AF25BC99E8A6FA5E255 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7572BE4B43917BCA01E2269B96F8688 /* UILabel+Extension.swift */; };
@@ -53,9 +54,10 @@
 		0D13C257D458CCB9A9AA1CEB5BE5988E /* Pods-ZZBaseKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZZBaseKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		15D327098F993560D5BDCA9CAF847613 /* ZZBaseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZZBaseKit-umbrella.h"; sourceTree = "<group>"; };
 		1A874578E9C309859E293F19B34F634A /* ZZShowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZZShowError.swift; path = ZZBaseKit/BaseKit/Component/ZZShowError.swift; sourceTree = "<group>"; };
+		218F207622816B6C0065F57F /* ZZKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZKeyChain.swift; sourceTree = "<group>"; };
 		24748E08A2D37330E2D0B890EE6914E3 /* Pods-ZZBaseKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZZBaseKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		24BCE2C82177EB7C469A102703C19AE6 /* UIButton+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UIButton+Extension.swift"; sourceTree = "<group>"; };
-		30BEB9FE7D37BE455477BC86ECB6D003 /* Pods_ZZBaseKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZZBaseKit_Example.framework; path = "Pods-ZZBaseKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BEB9FE7D37BE455477BC86ECB6D003 /* Pods_ZZBaseKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBaseKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3394E6FEE7B23699CD1C8CD12342797A /* ZZDeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZZDeviceInfo.swift; path = ZZBaseKit/BaseKit/DeviceInfo/ZZDeviceInfo.swift; sourceTree = "<group>"; };
 		386D3FB881E7D5CF68724250875938D3 /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UIView+Extension.swift"; sourceTree = "<group>"; };
 		3A72A015F858CC522F6D23346CADE4B9 /* Pods-ZZBaseKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZZBaseKit_Tests-Info.plist"; sourceTree = "<group>"; };
@@ -73,12 +75,12 @@
 		86D1947CB4E815F9DF6E19F421B18B17 /* ZZBaseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZZBaseKit-dummy.m"; sourceTree = "<group>"; };
 		872C03FC6E6520088561B590776ED485 /* ZZBaseKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZZBaseKit-Info.plist"; sourceTree = "<group>"; };
 		8901D3F1AEA95DA3B13252A941F0DF3F /* Pods-ZZBaseKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZZBaseKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		89E89334478816ADCC56BD4D7991AAE5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		89E89334478816ADCC56BD4D7991AAE5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		91F67F55FE6D58D340B18A380A1B2C53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		97EE7580891B33815EF9DE4B80029F72 /* UITextField+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UITextField+Extension.swift"; sourceTree = "<group>"; };
 		9ABC009A44815AE6FE5B77D31714DEAF /* Pods-ZZBaseKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZZBaseKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9D03CAFFCEE2C794E90E24964A354FA7 /* ZZBaseKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZZBaseKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D03CAFFCEE2C794E90E24964A354FA7 /* ZZBaseKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ZZBaseKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6352BF0245175DF6CDE5EB279D19999 /* Pods-ZZBaseKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZZBaseKit_Example.modulemap"; sourceTree = "<group>"; };
 		A946CC8C75D69386455C4DF2A1C57C04 /* Pods-ZZBaseKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZZBaseKit_Example-dummy.m"; sourceTree = "<group>"; };
 		AD3DD7C0C7DC1BAC16C268438AEC5FB6 /* Pods-ZZBaseKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZZBaseKit_Tests.modulemap"; sourceTree = "<group>"; };
@@ -86,12 +88,12 @@
 		C21AF5807487711D1A5F01F40DFC1E68 /* ZZBaseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZZBaseKit.modulemap; sourceTree = "<group>"; };
 		C9EC39777947A3A45AE5993DB4D64A25 /* Pods-ZZBaseKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZZBaseKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CEC8566E63DDAC9596D1D152F6D45C74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CEC8566E63DDAC9596D1D152F6D45C74 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D064D9FF203F0F3C5C27E548D440C79C /* ZZConstantDefine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZZConstantDefine.swift; path = ZZBaseKit/BaseKit/Defines/ZZConstantDefine.swift; sourceTree = "<group>"; };
 		D1CE21E51086DB5DF71E858F1B58D29A /* Pods-ZZBaseKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZZBaseKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DB1276A700F128D6B4281412E94796B0 /* ZZAlertSystemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZZAlertSystemView.swift; path = ZZBaseKit/BaseKit/Component/ZZAlertSystemView.swift; sourceTree = "<group>"; };
-		DED04668EB08CB520B4B0F6622B85D61 /* Pods_ZZBaseKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZZBaseKit_Tests.framework; path = "Pods-ZZBaseKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5044386B69202071B1EEEB5C71252AA /* ZZBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZZBaseKit.framework; path = ZZBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DED04668EB08CB520B4B0F6622B85D61 /* Pods_ZZBaseKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZBaseKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5044386B69202071B1EEEB5C71252AA /* ZZBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZZBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCCC9CE9D3AB3F697499CCA5A42351A /* ZZBaseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZZBaseKit.xcconfig; sourceTree = "<group>"; };
 		F7572BE4B43917BCA01E2269B96F8688 /* UILabel+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UILabel+Extension.swift"; sourceTree = "<group>"; };
 		FBE42D5526C50C6B44E29251EC33F375 /* ZZBaseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZZBaseKit-prefix.pch"; sourceTree = "<group>"; };
@@ -140,6 +142,15 @@
 				48BAB119373DF9DC646DC1F3021745CA /* ZZOtherMethod.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		218F207522816B6C0065F57F /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				218F207622816B6C0065F57F /* ZZKeyChain.swift */,
+			);
+			name = KeyChain;
+			path = ZZBaseKit/BaseKit/KeyChain;
 			sourceTree = "<group>";
 		};
 		2C5D3AA6E3CE8AD7568D2C5C9A1A1861 /* Pods-ZZBaseKit_Tests */ = {
@@ -207,6 +218,7 @@
 		7485C8789851BCC895F7EA74714550E1 /* ZZBaseKit */ = {
 			isa = PBXGroup;
 			children = (
+				218F207522816B6C0065F57F /* KeyChain */,
 				F5B52AF9A1156FAE686A351FFC1A9F1C /* Component */,
 				3C9DD5CA9178C2D92CCC3BF4047D07B3 /* Defines */,
 				752DD2C54B094772C9ED4AEBCC3CA669 /* DeviceInfo */,
@@ -400,6 +412,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -473,6 +486,7 @@
 				F7AE5AD6C7E685E46BD41B45FEFC8FED /* ZZFuncDefine.swift in Sources */,
 				891AF159B5EB0F6A5ED1FE430AC605D2 /* ZZOtherMethod.swift in Sources */,
 				5F629DEEC6C8E3EFE49911EF1D7A64B5 /* ZZShowError.swift in Sources */,
+				218F207722816B6C0065F57F /* ZZKeyChain.swift in Sources */,
 				DF5A48A53E142777B25AE94CE1748CDE /* ZZWKWebVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,8 +823,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

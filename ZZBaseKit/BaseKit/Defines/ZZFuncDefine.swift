@@ -27,6 +27,15 @@ public func zz_isIpad() -> Bool {
     return false
 }
 
+/// 判断是否是iPhone X
+public func zz_isIphoneX() -> Bool {
+    let phoneSize = UIScreen.main.currentMode?.size
+    if (phoneSize?.equalTo(CGSize(width: 1125, height: 2436)))!  && !zz_isIpad() {
+        return true
+    }
+    return false
+}
+
 /// 判断是否是iPhone Xr
 public func zz_isIphoneXR() -> Bool {
     let phoneSize = UIScreen.main.currentMode?.size
