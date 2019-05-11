@@ -30,7 +30,7 @@ public enum ZZLoadType: Int {
     case interaction = 1
 }
 
-public typealias ZZWkCompletionHandler = (_ count: Int, _ loadURL: URL) -> Void
+public typealias ZZWkCompletionHandler = (_ loadURL: String) -> Void
 
 open class ZZWKWebVC: UIViewController {
     
@@ -43,18 +43,18 @@ open class ZZWKWebVC: UIViewController {
         }
     }
     
-    private lazy var configuration = WKWebViewConfiguration()
-    private lazy var phoneNumber: String? = nil
-    private lazy var phoneEncrypt: String? = nil
-    private lazy var userId: String? = nil
-    private lazy var umToken: String? = nil
-    private lazy var loadCount: Int = 0
+    private lazy var phoneNumber: String = ""
+    private lazy var phoneEncrypt: String = ""
+    private lazy var userId: String = ""
+    private lazy var umToken: String = ""
+    
     private var completeBlock: ZZWkCompletionHandler?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.zzWebView)
         self.view.addSubview(self.zzProgress)
+        zz_wkAddScriptMessage(self.configuration.userContentController)
         zz_wkLoadWebUrl()
     }
     
@@ -93,6 +93,11 @@ open class ZZWKWebVC: UIViewController {
         zzWebView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions.new, context: nil)
         zzWebView.addObserver(self, forKeyPath: "title", options: NSKeyValueObservingOptions.new, context: nil)
         return zzWebView
+    }()
+    
+    lazy var configuration: WKWebViewConfiguration = {
+        let configuration = WKWebViewConfiguration()
+        return configuration
     }()
     
     lazy var zzProgress: UIProgressView = {
@@ -160,12 +165,11 @@ extension ZZWKWebVC: WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.zzProgress.isHidden = true
         if self.loadType == .interaction {
-            zz_wkAutoInputPhone(phone: self.phoneNumber!)
+            zz_wkAutoInputPhone(phone: self.phoneNumber)
             zz_wkPublicParamScriptMessage(ScriptMessage.paramsName)
             //加载完成回调
             if self.completeBlock != nil {
-                self.completeBlock!(self.loadCount, webView.url!)
-                self.loadCount += 1
+                self.completeBlock!(webView.url!.absoluteString)
             }
         }
     }
@@ -277,6 +281,13 @@ extension ZZWKWebVC {
         return str
     }
     
+    private func wk_withoutWhitespace(_ jsonStr: String) -> String {
+        var jsonStr = jsonStr
+        jsonStr = jsonStr.replacingOccurrences(of: "\r", with: "")
+        jsonStr = jsonStr.replacingOccurrences(of: "\n", with: "")
+        jsonStr = jsonStr.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return jsonStr
+    }
     
     private func zz_wkAddScriptMessage(_ userContent: WKUserContentController) {
         userContent.add(self, name: ScriptMessage.paramsPhoneEncrypt)
@@ -317,8 +328,8 @@ extension ZZWKWebVC {
     // 传参给js的公共参数 不需要配置
     private func zz_wkConfigPublicParams() -> [String: Any]  {
         var params = [String: Any]()
-        params.updateValue(self.phoneEncrypt!, forKey: "phone")
-        params.updateValue(self.phoneNumber!, forKey: "userPhone")
+        params.updateValue(self.phoneEncrypt, forKey: "phone")
+        params.updateValue(self.phoneNumber, forKey: "userPhone")
         params.updateValue(ZZ_APP_NAME, forKey: "appName")
         params.updateValue(ZZ_APP_IDFA, forKey: "imei")
         params.updateValue(ZZ_APP_IDFA, forKey: "idfa")
@@ -326,6 +337,7 @@ extension ZZWKWebVC {
         params.updateValue(ZZ_APP_VERSION, forKey: "version")
         params.updateValue("App Store", forKey: "channel")
         params.updateValue("2", forKey: "osType")
+        params.updateValue(self.userId, forKey: "userId")
         return params
     }
     
@@ -333,9 +345,9 @@ extension ZZWKWebVC {
         var params = [String: Any]()
         
         if isEncrypt { // 手机号需要加密
-           params.updateValue(self.phoneNumber!, forKey: "phone")
+           params.updateValue(self.phoneEncrypt, forKey: "phone")
         } else {
-            params.updateValue(self.phoneEncrypt!, forKey: "phone")
+            params.updateValue(self.phoneNumber, forKey: "phone")
         }
         params.updateValue(ZZ_APP_NAME, forKey: "appName")
         params.updateValue(ZZ_APP_NAME, forKey: "app_name")
@@ -345,9 +357,9 @@ extension ZZWKWebVC {
         params.updateValue(ZZ_APP_IDFA, forKey: "idfa")
         params.updateValue(ZZ_APP_BUNDLE_ID, forKey: "pkgName")
         params.updateValue(ZZ_APP_BUNDLE_ID, forKey: "appPkgName")
-        if self.umToken != nil {
-            params.updateValue(self.umToken! , forKey: "device_token")
-            params.updateValue(self.umToken!, forKey: "deviceToken")
+        if self.umToken.count > 0 {
+            params.updateValue(self.umToken , forKey: "device_token")
+            params.updateValue(self.umToken, forKey: "deviceToken")
         }
         params.updateValue(ZZ_APP_VERSION, forKey: "version")
         params.updateValue(ZZ_APP_VERSION, forKey: "apkVersion")
@@ -355,7 +367,8 @@ extension ZZWKWebVC {
         params.updateValue("2", forKey: "osType")
         params.updateValue("2", forKey: "os_type")
         params.updateValue(ZZDeviceInfo.zz_getDeviceName(), forKey: "model")
-        
+        params.updateValue(self.userId, forKey: "userId")
+
         return params
     }
     
@@ -372,13 +385,13 @@ extension ZZWKWebVC {
         })
     }
     
-    private func zz_wkPublicParamScriptMessage(_ meaageName: String) {
+    private func zz_wkPublicParamScriptMessage(_ messageName: String) {
         let jsonStr = zz_dicToJsonStr(zz_wkConfigPublicParams())
-        zz_wkSendMessage(jsonStr!, meaageName)
+        zz_wkSendMessage(jsonStr!, messageName)
     }
     
-    private func zz_wkUserIdScriptMessage(_ meaageName: String) {
-        zz_wkSendMessage(self.userId!, meaageName)
+    private func zz_wkUserIdScriptMessage(_ messageName: String) {
+        zz_wkSendMessage(self.userId, messageName)
     }
     
     private func zz_wkOpenWeixinScriptMessage(_ weixinName: String) {
@@ -390,17 +403,14 @@ extension ZZWKWebVC {
         }
     }
     
-    
     private func zz_wkSendMessageWithComon( _ messageName: String, apiType: String,  isEcrypt: Bool) {
         let dic = zz_wkConfigComonParams(apiType: apiType, isEncrypt: isEcrypt)
         let jsonStr = zz_dicToJsonStr(dic)
         zz_wkSendMessage(jsonStr!, messageName)
     }
     
-    
-    
     private func zz_wkSendMessage(_ paramsStr: String, _ messageName: String) {
-        let methodStr = paramsStr + "(\(messageName))"
+        let methodStr = messageName + "(\(wk_withoutWhitespace(paramsStr)))"
         DispatchQueue.main.async {
             self.zzWebView.evaluateJavaScript(methodStr, completionHandler: nil)
         }

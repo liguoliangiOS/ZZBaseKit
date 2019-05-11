@@ -10,6 +10,11 @@
 		029823F278A217A069E33FBC293F68F6 /* ZZDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394E6FEE7B23699CD1C8CD12342797A /* ZZDeviceInfo.swift */; };
 		14CE319451C215F31E40A55A50DE48A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		1AD02002FC18F30DB72EA2651856B60A /* ZZConstantDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D9FF203F0F3C5C27E548D440C79C /* ZZConstantDefine.swift */; };
+		215601EE2286A545009BB31B /* ZZCryptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215601ED2286A545009BB31B /* ZZCryptManager.swift */; };
+		215601F32286A585009BB31B /* AESCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215601EF2286A585009BB31B /* AESCrypt.swift */; };
+		215601F42286A585009BB31B /* MD5Crypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215601F02286A585009BB31B /* MD5Crypt.swift */; };
+		215601F52286A585009BB31B /* SecExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215601F12286A585009BB31B /* SecExtension.swift */; };
+		215601F62286A585009BB31B /* RSACrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215601F22286A585009BB31B /* RSACrypt.swift */; };
 		218F207722816B6C0065F57F /* ZZKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F207622816B6C0065F57F /* ZZKeyChain.swift */; };
 		2382C115CE30395F587FF1694BA891DB /* Pods-ZZBaseKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24748E08A2D37330E2D0B890EE6914E3 /* Pods-ZZBaseKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		355B85982AE57532E0BA08B6391AE894 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BCE2C82177EB7C469A102703C19AE6 /* UIButton+Extension.swift */; };
@@ -54,6 +59,11 @@
 		0D13C257D458CCB9A9AA1CEB5BE5988E /* Pods-ZZBaseKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZZBaseKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		15D327098F993560D5BDCA9CAF847613 /* ZZBaseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZZBaseKit-umbrella.h"; sourceTree = "<group>"; };
 		1A874578E9C309859E293F19B34F634A /* ZZShowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZZShowError.swift; path = ZZBaseKit/BaseKit/Component/ZZShowError.swift; sourceTree = "<group>"; };
+		215601ED2286A545009BB31B /* ZZCryptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCryptManager.swift; sourceTree = "<group>"; };
+		215601EF2286A585009BB31B /* AESCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESCrypt.swift; sourceTree = "<group>"; };
+		215601F02286A585009BB31B /* MD5Crypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MD5Crypt.swift; sourceTree = "<group>"; };
+		215601F12286A585009BB31B /* SecExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecExtension.swift; sourceTree = "<group>"; };
+		215601F22286A585009BB31B /* RSACrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSACrypt.swift; sourceTree = "<group>"; };
 		218F207622816B6C0065F57F /* ZZKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZKeyChain.swift; sourceTree = "<group>"; };
 		24748E08A2D37330E2D0B890EE6914E3 /* Pods-ZZBaseKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZZBaseKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		24BCE2C82177EB7C469A102703C19AE6 /* UIButton+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "ZZBaseKit/BaseKit/Extensions/UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -144,6 +154,19 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		215601EC2286A545009BB31B /* CryptManager */ = {
+			isa = PBXGroup;
+			children = (
+				215601EF2286A585009BB31B /* AESCrypt.swift */,
+				215601F02286A585009BB31B /* MD5Crypt.swift */,
+				215601F22286A585009BB31B /* RSACrypt.swift */,
+				215601F12286A585009BB31B /* SecExtension.swift */,
+				215601ED2286A545009BB31B /* ZZCryptManager.swift */,
+			);
+			name = CryptManager;
+			path = ZZBaseKit/BaseKit/CryptManager;
+			sourceTree = "<group>";
+		};
 		218F207522816B6C0065F57F /* KeyChain */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +241,7 @@
 		7485C8789851BCC895F7EA74714550E1 /* ZZBaseKit */ = {
 			isa = PBXGroup;
 			children = (
+				215601EC2286A545009BB31B /* CryptManager */,
 				218F207522816B6C0065F57F /* KeyChain */,
 				F5B52AF9A1156FAE686A351FFC1A9F1C /* Component */,
 				3C9DD5CA9178C2D92CCC3BF4047D07B3 /* Defines */,
@@ -474,11 +498,15 @@
 			files = (
 				8E39EDE25D187BD49B485F6024C41C64 /* String+Extension.swift in Sources */,
 				355B85982AE57532E0BA08B6391AE894 /* UIButton+Extension.swift in Sources */,
+				215601F32286A585009BB31B /* AESCrypt.swift in Sources */,
+				215601F42286A585009BB31B /* MD5Crypt.swift in Sources */,
 				8BE6008C8C2A6CE1072ADF1D95005C73 /* UIImageView+Extension.swift in Sources */,
 				4CFD83FB022B7AF25BC99E8A6FA5E255 /* UILabel+Extension.swift in Sources */,
 				9C8BC671720A928720DC832C6CE0410C /* UITextField+Extension.swift in Sources */,
+				215601F62286A585009BB31B /* RSACrypt.swift in Sources */,
 				6B18B5AF686A803A263B40EE631F5E53 /* UIView+Extension.swift in Sources */,
 				E48FE43159161DEFE3C171EE55FBF89E /* ZZAlertSystemView.swift in Sources */,
+				215601F52286A585009BB31B /* SecExtension.swift in Sources */,
 				D6BE6316BCC907E3F0F69C9C8BBB586C /* ZZBaseKit-dummy.m in Sources */,
 				1AD02002FC18F30DB72EA2651856B60A /* ZZConstantDefine.swift in Sources */,
 				A8753013ADF447C2653FCB0C55077AEA /* ZZCurrentVC.swift in Sources */,
@@ -486,6 +514,7 @@
 				F7AE5AD6C7E685E46BD41B45FEFC8FED /* ZZFuncDefine.swift in Sources */,
 				891AF159B5EB0F6A5ED1FE430AC605D2 /* ZZOtherMethod.swift in Sources */,
 				5F629DEEC6C8E3EFE49911EF1D7A64B5 /* ZZShowError.swift in Sources */,
+				215601EE2286A545009BB31B /* ZZCryptManager.swift in Sources */,
 				218F207722816B6C0065F57F /* ZZKeyChain.swift in Sources */,
 				DF5A48A53E142777B25AE94CE1748CDE /* ZZWKWebVC.swift in Sources */,
 			);

@@ -38,15 +38,19 @@ public extension UITextField {
     
     
     /** 创建 leftview **/
-    func zz_textFieldSetLeftView(_ leftView: UIView) {
-        self.leftView = leftView
-        self.leftViewMode = .always
+    func zz_textFieldSetLeftView(_ leftView: UIView?) {
+        if leftView != nil  {
+            self.leftView = leftView
+            self.leftViewMode = .always
+        }
     }
     
     /** 创建 rightView **/
-    func zz_textFieldSetRightView(_ rightView: UIView) {
-        self.rightView = rightView
-        self.rightViewMode = .always
+    func zz_textFieldSetRightView(_ rightView: UIView?) {
+        if rightView != nil  {
+            self.rightView = rightView
+            self.rightViewMode = .always
+        }
     }
     
     /** 创建 修改UITextField的清除按钮 **/

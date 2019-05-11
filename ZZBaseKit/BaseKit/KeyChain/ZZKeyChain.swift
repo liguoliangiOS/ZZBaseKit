@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AdSupport
 
 public class ZZKeyChain: NSObject {
     
@@ -63,5 +64,27 @@ public class ZZKeyChain: NSObject {
         keychainQuaryDic.updateValue(account, forKey: kSecAttrAccount as String)
         keychainQuaryDic.updateValue(kSecAttrAccessibleAfterFirstUnlock, forKey: kSecAttrAccessible as String)
         return keychainQuaryDic
+    }
+    
+    public class func zz_keyChainIdfa() -> String {
+       
+        let identifier = Bundle.main.bundleIdentifier!
+        let keychainStr = "zz.keyChain.private.\(identifier).idfa"
+        if let result = ZZKeyChain.zz_keyChainReadData(account: keychainStr, password: keychainStr) as? String {
+            return result
+        } else {
+            var dataStr: String?
+            if #available(iOS 10.0, *)  {
+                if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+                    dataStr = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                } else {
+                    dataStr = UIDevice.current.identifierForVendor!.uuidString
+                }
+            } else {
+                dataStr = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            }
+            _ = ZZKeyChain.zz_keyChainSaveDta(account: keychainStr, password: keychainStr, data: dataStr as Any)
+            return dataStr!
+        }
     }
 }

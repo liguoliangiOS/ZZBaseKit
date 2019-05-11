@@ -10,7 +10,18 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+  导入项目中
 
+    `pod  ZZBaseKit` 导入整个库
+    
+    也可导入部分到库，里面的每个文件夹都可单独导入，如：
+    
+    `pod ZZBaseKit/Defines` 导入库里面的Defines常用的方法定义
+    `pod ZZBaseKit/CryptManager` 导入库里面的CryptManager加解密
+    `pod ZZBaseKit/KeyChain` 导入库里面的KeyChain钥匙串存储
+    `pod ZZBaseKit/DeviceInfo` 导入库里面的DeviceInfo设备信息
+    `pod ZZBaseKit/Extensions` 导入库里面的Extensions常用类的Extension
+    `......`
 
 ## Version new features
 
@@ -77,7 +88,7 @@ v 0.1.7
 2. 修复webView链接的处理 
 3. 适配系数修改
    
-   
+
     ```
     //使用介绍
     ///保存
@@ -89,6 +100,28 @@ v 0.1.7
     ///删除
     ZZKeyChain.zz_keychainDelete(account: "Passer", password: "Montanus")
     
+    ```
+    
+
+   v 0.1.8 增加加密库 CryptManager ,修复webView的部分bug
+    
+    ```
+    //使用方法
+    AES 加解密
+    ZZCryptManager.zz_aesEncrypt(_ text: String, _ key:[UInt8], _ iv:[UInt8])
+    ZZCryptManager.zz_aesEncryptStr(_ text: String, _ key:String, _ iv:String)
+    zz_aesDecrypt(_ aesText: String, _ key:[UInt8], _ iv:[UInt8])
+    zz_aesDecryptStr(_ aesText: String, _ key:String, _ iv:String)
+    MD5加密
+    zz_md5Encrypt(_ text: String )
+    RSA加解密
+    ZZCryptManager.zz_rsaEncrypt(_ text: String, _ publicKey: String)
+    ZZCryptManager.zz_rsaDecrypt(_ encryptData: String, _ privateKey: String)
+    ZZCryptManager.zz_rsaDecryptPublic(_ encryptData: String, _ publicKey: String)
+    加签
+    ZZCryptManager.zz_rsaSignWithSHA1(_ text: String, _ privateKey: String) 
+    RSA验签
+    ZZCryptManager.zz_rsaSignVerifyWithSHA1(_ originalStr: String, _ siginStr: String, _ publicKey: String)
     ```
 
 ## Installation

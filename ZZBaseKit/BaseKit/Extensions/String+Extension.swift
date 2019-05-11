@@ -42,18 +42,26 @@ public extension String {
             return true
         }
     }
+    ////判断中文字
+    var zz_isChineseName: Bool {
+        let pattern = "(^[\\u4e00-\\u9fa5]+$)"
+        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", pattern)
+        return predicate.evaluate(with: self)
+    }
     
      /////判断只能输入数字
     var zz_isInputNumber: Bool {
         return zz_characterSetWithStr("0123456789\n", self)
     }
     
-    
     /////判断密码能输入的格式
     var zz_isInputPassText: Bool {
         return zz_characterSetWithStr("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", self)
     }
     
+    var zz_isInputIdCarNumber:  Bool {
+        return zz_characterSetWithStr("0123456789xX", self)
+    }
     
     /////自定义位数 正则匹配用户密码字和字母组合
     func zz_password(_ min: Int, _ max: Int) -> Bool {
@@ -76,7 +84,6 @@ public extension String {
         }
         return false
     }
-    
     
 }
 
