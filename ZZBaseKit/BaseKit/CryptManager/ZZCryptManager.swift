@@ -10,7 +10,7 @@ import UIKit
 private let ZZ_RSA_PRIVATE_KEY_TAG = "RSAUtil_PrivKey"
 private let ZZ_RSA_PUBLIC_KEY_TAG = "RSAUtil_PubKey"
 
-class ZZCryptManager: NSObject {
+public class ZZCryptManager: NSObject {
     //MARK: ---- MD5加密
     public class func zz_md5Encrypt(_ text: String ) -> String {
         return text.md5Encrypt()
