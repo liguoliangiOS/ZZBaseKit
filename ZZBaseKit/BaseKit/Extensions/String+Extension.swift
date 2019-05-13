@@ -22,11 +22,29 @@ public extension String {
         if self.count != 11  {
             return false
         }
-        let mobileStr:String = "^1\\d{10}$"
-        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", mobileStr)
-        return predicate.evaluate(with: self)
+        return zz_predicate("^1\\d{10}$")
     }
     
+    ///判断邮箱的正则
+    var zz_isEmial: Bool {
+        return zz_predicate("^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+(cn|com|net|org|gov|club)$")
+    }
+    
+    ///判断固定电话
+    var zz_isTelephone: Bool {
+        return zz_predicate("^(0[0-9]{2,3})?([2-9][0-9]{6,7})")
+    }
+    
+    ///判断是纯数字
+    var zz_isAllNumber: Bool {
+        return zz_predicate("[0-9]*")
+    }
+    ///判断包含数字、字母、中文字符
+    var zz_isOutSpecial: Bool {
+        return zz_predicate("[a-zA-Z0-9\\u4E00-\\u9FA5]+")
+    }
+    
+    ///判断不包含emoji
     var zz_isUnContainsEmoji: Bool {
         do {
             let submitText = self.replacingOccurrences(of: " ", with: "")
@@ -44,9 +62,7 @@ public extension String {
     }
     ////判断中文字
     var zz_isChineseName: Bool {
-        let pattern = "(^[\\u4e00-\\u9fa5]+$)"
-        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", pattern)
-        return predicate.evaluate(with: self)
+        return zz_predicate("(^[\\u4e00-\\u9fa5]+$)")
     }
     
      /////判断只能输入数字
@@ -59,8 +75,15 @@ public extension String {
         return zz_characterSetWithStr("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", self)
     }
     
+    ///判断身份证能输入的格式
     var zz_isInputIdCarNumber:  Bool {
         return zz_characterSetWithStr("0123456789xX", self)
+    }
+    
+    
+    ///判断邮箱能输入的格式
+    var zz_isInputEmail: Bool {
+        return zz_predicate("[a-zA-Z0-9@.]*")
     }
     
     /////自定义位数 正则匹配用户密码字和字母组合
@@ -68,9 +91,7 @@ public extension String {
         if self.count == 0 {
             return false
         }
-        let regextestStr = String(format: "^(?=.*[a-zA-Z0-9].*)(?=.*[a-zA-Z\\W].*)(?=.*[0-9\\W].*).{%d,%d}$", min, max)
-        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", regextestStr)
-        return predicate.evaluate(with: self)
+        return zz_predicate(String(format: "^(?=.*[a-zA-Z0-9].*)(?=.*[a-zA-Z\\W].*)(?=.*[0-9\\W].*).{%d,%d}$", min, max))
     }
     
     
@@ -85,6 +106,10 @@ public extension String {
         return false
     }
     
+    func zz_predicate(_ pattern: String) -> Bool {
+        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", pattern)
+        return predicate.evaluate(with: self)
+    }
 }
 
 

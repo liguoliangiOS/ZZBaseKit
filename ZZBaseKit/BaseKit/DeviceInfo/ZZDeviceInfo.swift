@@ -53,7 +53,7 @@ public class ZZDeviceInfo: NSObject {
         return zz_deviceIP()
     }
     
-    ///获取cpu核数类型
+    ///获取cpu核数
     public class func zz_getDeviceCpuCount() -> Int {
         return zz_deviceCpuCount()
     }
@@ -66,6 +66,28 @@ public class ZZDeviceInfo: NSObject {
     ///获取设备名称
     public class func zz_getDeviceName() -> String {
         return zz_deviceName()
+    }
+    
+    ///上传激活日志需要的数据
+    public class func zz_appActiveParmas() ->  [String: Any] {
+        
+        var pramas = [String: Any]()
+        
+        let screenW = UIScreen.main.bounds.width
+        let screenH = UIScreen.main.bounds.height
+        let scale = UIScreen.main.scale
+        
+        pramas.updateValue(UIDevice.current.localizedModel, forKey: "brand") // 手机品牌
+        pramas.updateValue(zz_getDeviceName(), forKey: "model") // 设备型号
+        pramas.updateValue(zz_getDeviceSystemVersion(), forKey: "version") // 手机版本号
+        pramas.updateValue(zz_getDeviceSupplier(), forKey: "operator") //// 运营商
+        pramas.updateValue(zz_getDeviceDiskTotalSize(), forKey: "memory") //// 总内存
+        pramas.updateValue(zz_getDeviceAvalibleDiskSize(), forKey: "free_memory") //可用内存
+        pramas.updateValue(zz_getDeviceCpuType(), forKey: "cpu_name")//cpu 类型
+        pramas.updateValue(zz_getDeviceCpuCount(), forKey: "cpu_num") // cpu核数
+        pramas.updateValue("\(screenW)/\(screenH)", forKey: "screen_size")
+        pramas.updateValue("\(screenW * scale)/\(screenH * scale)", forKey: "screen_ratio")
+        return pramas
     }
 }
 

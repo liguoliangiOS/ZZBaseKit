@@ -22,7 +22,7 @@ private struct ScriptMessage {
     static let openToWX = "cpAndToWechat";//跳转微信
 }
 
-public enum ZZLoadType: Int {
+private enum ZZLoadType: Int {
     ///加载协议等不需要与H5交互的
     case rules = 0
     
@@ -34,8 +34,8 @@ public typealias ZZWkCompletionHandler = (_ loadURL: String) -> Void
 
 open class ZZWKWebVC: UIViewController {
     
-    public lazy var url: String? = nil
-    public lazy var loadType = ZZLoadType.rules
+    private lazy var url: String? = nil
+    private lazy var loadType = ZZLoadType.rules
     
     public var zzCanGoback: Bool  {
         get {
@@ -50,6 +50,25 @@ open class ZZWKWebVC: UIViewController {
     
     private var completeBlock: ZZWkCompletionHandler?
     
+    ///初始化方法  h5页面需要回调
+    open class func zz_wkWeb(loadUrl: String, _ phone: String, _ aesPhone: String, _ userLoginId: String, _ umDeviceToken: String) -> ZZWKWebVC {
+        let webVc = ZZWKWebVC()
+        webVc.phoneNumber = phone
+        webVc.phoneEncrypt = aesPhone
+        webVc.userId = userLoginId
+        webVc.umToken = umDeviceToken
+        webVc.url = loadUrl
+        webVc.loadType = .interaction
+        return webVc
+    }
+     ///初始化方法  一般的h5，只需要加载列入协议等
+    open class func zz_wkWeb(loadUrl: String) -> ZZWKWebVC {
+        let webVc = ZZWKWebVC()
+        webVc.loadType = .rules
+        webVc.url = loadUrl
+        return webVc
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.zzWebView)
@@ -62,12 +81,13 @@ open class ZZWKWebVC: UIViewController {
         self.completeBlock = block
     }
     
-    ///传必须的参数
+     ///用 zz_wkWeb（）方法创建的就不需要调用此方法 这个针对H5贷款产品的，一般的H5不需要调用
     public func zz_wkWebSetParams(phone: String, aesPhone: String, userLoginId: String, umDeviceToken: String)  {
         self.phoneNumber = phone
         self.phoneEncrypt = aesPhone
         self.userId = userLoginId
         self.umToken = umDeviceToken
+        self.loadType = .interaction
     }
      ///网页返回
     public func zz_wkWebGoback() {
@@ -86,7 +106,7 @@ open class ZZWKWebVC: UIViewController {
     }
     
     lazy var zzWebView: WKWebView = {
-        let zzWebView = WKWebView(frame: self.view.bounds, configuration: self.configuration)
+        let zzWebView = WKWebView(frame: CGRect(x: 0, y: ZZ_NAVIGATION_HEIGHT, width: ZZ_SCREEN_WIDTH, height: ZZ_SCREEN_HEIGHT - ZZ_NAVIGATION_HEIGHT), configuration: self.configuration)
         zzWebView.navigationDelegate = self
         zzWebView.backgroundColor = .white
         zzWebView.uiDelegate = self
