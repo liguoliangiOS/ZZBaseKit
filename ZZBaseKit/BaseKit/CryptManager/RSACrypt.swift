@@ -377,7 +377,6 @@ internal class RSACrypt: NSObject {
         if ( keyRef == nil ) {
             return nil
         }
-        
         return decryptWithRSAKey(encryptedData, rsaKeyRef: keyRef!, padding: SecPadding())
     }
     

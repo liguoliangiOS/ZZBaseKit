@@ -34,7 +34,7 @@ public typealias ZZWkCompletionHandler = (_ loadURL: String) -> Void
 
 open class ZZWKWebVC: UIViewController {
     
-    private lazy var url: String? = nil
+    lazy var url: String? = nil
     private lazy var loadType = ZZLoadType.rules
     
     public var zzCanGoback: Bool  {
@@ -157,9 +157,9 @@ extension ZZWKWebVC: WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler {
       // MARK: ---- WKScriptMessageHandler
    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == ScriptMessage.paramsPhoneEncrypt {
-            zz_wkSendMessageWithComon(ScriptMessage.sendparamsPhoneEncrypt, apiType: message.body as! String, isEcrypt: true)
+            zz_wkSendMessageWithComon(ScriptMessage.sendparamsPhoneEncrypt, apiType: message.body as! Int, isEcrypt: true)
         } else if message.name == ScriptMessage.paramsPhone {
-            zz_wkSendMessageWithComon(ScriptMessage.sendparamsPhone, apiType: message.body as! String, isEcrypt: false)
+            zz_wkSendMessageWithComon(ScriptMessage.sendparamsPhone, apiType: message.body as! Int, isEcrypt: false)
         } else if message.name == ScriptMessage.getUserId {
             zz_wkUserIdScriptMessage(ScriptMessage.sendUserId)
         } else if message.name == ScriptMessage.openToWX {
@@ -179,6 +179,11 @@ extension ZZWKWebVC: WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler {
     ///网络错误
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         self.zzProgress.isHidden = true
+    
+        let resultError = error as NSError
+        if resultError.code == -1002 { //unsupported URL
+           _ = zz_openUrl(resultError.userInfo["NSErrorFailingURLKey"] as! URL)
+        }
     }
     
     ///网页加载完成
@@ -242,7 +247,7 @@ extension ZZWKWebVC: WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler {
         }
         
         if let url = navigationAction.request.url {
-            if url.host == "itunes.apple.com" || url.absoluteString.contains("itms-services://") {
+            if url.host == "itunes.apple.com" {
                 if zz_openUrl(url) {
                    decisionHandler(.cancel)
                     return
@@ -361,7 +366,7 @@ extension ZZWKWebVC {
         return params
     }
     
-    private func zz_wkConfigComonParams(apiType: String, isEncrypt: Bool) -> [String: Any]  {
+    private func zz_wkConfigComonParams(apiType: Int, isEncrypt: Bool) -> [String: Any]  {
         var params = [String: Any]()
         
         if isEncrypt { // 手机号需要加密
@@ -423,7 +428,7 @@ extension ZZWKWebVC {
         }
     }
     
-    private func zz_wkSendMessageWithComon( _ messageName: String, apiType: String,  isEcrypt: Bool) {
+    private func zz_wkSendMessageWithComon( _ messageName: String, apiType: Int,  isEcrypt: Bool) {
         let dic = zz_wkConfigComonParams(apiType: apiType, isEncrypt: isEcrypt)
         let jsonStr = zz_dicToJsonStr(dic)
         zz_wkSendMessage(jsonStr!, messageName)

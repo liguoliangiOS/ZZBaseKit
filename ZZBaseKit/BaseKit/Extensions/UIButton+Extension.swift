@@ -144,3 +144,37 @@ public extension UIButton {
         self.backgroundColor = backgroundColor
     }
 }
+
+public extension UIButton {
+    
+    func zz_buttonImageLabelPosition(_ position: UIView.ContentMode, _ spacing: CGFloat) {
+        let title = self.titleLabel!.text!
+        let imageSize = self.imageView!.image!.size
+        let titleFont = self.titleLabel!.font
+        let titleSize = title.size(withAttributes: [NSAttributedString.Key.font: titleFont as Any])
+        
+        var titleInsets: UIEdgeInsets
+        var imageInsets: UIEdgeInsets
+        
+        switch (position){
+        case .top:
+            titleInsets = UIEdgeInsets(top: -(imageSize.height + titleSize.height + spacing), left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        case .bottom:
+            titleInsets = UIEdgeInsets(top: (imageSize.height + titleSize.height + spacing), left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        case .left:
+            titleInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,right: -(titleSize.width * 2 + spacing))
+        case .right:
+            titleInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -spacing)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        default:
+            titleInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
+        self.titleEdgeInsets = titleInsets
+        self.imageEdgeInsets = imageInsets
+    }
+}
