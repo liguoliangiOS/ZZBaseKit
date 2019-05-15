@@ -22,7 +22,7 @@ private struct ScriptMessage {
     static let openToWX = "cpAndToWechat";//跳转微信
 }
 
-private enum ZZLoadType: Int {
+public enum ZZLoadType: Int {
     ///加载协议等不需要与H5交互的
     case rules = 0
     
@@ -34,8 +34,8 @@ public typealias ZZWkCompletionHandler = (_ loadURL: String) -> Void
 
 open class ZZWKWebVC: UIViewController {
     
-    lazy var url: String? = nil
-    private lazy var loadType = ZZLoadType.rules
+    public lazy var url: String? = nil
+    public lazy var loadType = ZZLoadType.rules
     
     public var zzCanGoback: Bool  {
         get {
