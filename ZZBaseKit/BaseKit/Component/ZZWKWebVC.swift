@@ -356,8 +356,8 @@ extension ZZWKWebVC {
         params.updateValue(self.phoneEncrypt, forKey: "phone")
         params.updateValue(self.phoneNumber, forKey: "userPhone")
         params.updateValue(ZZ_APP_NAME, forKey: "appName")
-        params.updateValue(ZZ_APP_IDFA, forKey: "imei")
-        params.updateValue(ZZ_APP_IDFA, forKey: "idfa")
+        params.updateValue(ZZKeyChain.zz_keyChainIdfa(), forKey: "imei")
+        params.updateValue(ZZKeyChain.zz_keyChainIdfa(), forKey: "idfa")
         params.updateValue(ZZ_APP_BUNDLE_ID, forKey: "pkgName")
         params.updateValue(ZZ_APP_VERSION, forKey: "version")
         params.updateValue("App Store", forKey: "channel")
@@ -378,8 +378,8 @@ extension ZZWKWebVC {
         params.updateValue(ZZ_APP_NAME, forKey: "app_name")
         params.updateValue(apiType, forKey: "apiType")
 
-        params.updateValue(ZZ_APP_IDFA, forKey: "imei")
-        params.updateValue(ZZ_APP_IDFA, forKey: "idfa")
+        params.updateValue(ZZKeyChain.zz_keyChainIdfa(), forKey: "imei")
+        params.updateValue(ZZKeyChain.zz_keyChainIdfa(), forKey: "idfa")
         params.updateValue(ZZ_APP_BUNDLE_ID, forKey: "pkgName")
         params.updateValue(ZZ_APP_BUNDLE_ID, forKey: "appPkgName")
         if self.umToken.count > 0 {
