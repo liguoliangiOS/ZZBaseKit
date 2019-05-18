@@ -62,7 +62,16 @@ public extension String {
     }
     ////判断中文字
     var zz_isChineseName: Bool {
-        return zz_predicate("(^[\\u4e00-\\u9fa5]+$)")
+        if self.count < 2 {
+            return false
+        }
+        let rangeO = self.range(of: "·")
+        let rangeT = self.range(of: "•")
+        if rangeO != nil || rangeT != nil { //中间带有 · •的名字
+            return zz_predicate("^[\\u4e00-\\u9fa5]+[·•][\\u4e00-\\u9fa5]+$")
+        } else { //一般的名字
+            return zz_predicate("^[\\u4e00-\\u9fa5]+$")
+        }
     }
     
      /////判断只能输入数字
