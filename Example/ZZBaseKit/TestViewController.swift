@@ -13,7 +13,7 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(zz_isIphonexType())
     }
     
     

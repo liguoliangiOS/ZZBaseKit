@@ -52,7 +52,7 @@ open class ZZWKWebVC: UIViewController {
     
     ///初始化方法  h5页面需要回调
     open class func zz_wkWeb(loadUrl: String, _ phone: String, _ aesPhone: String, _ userLoginId: String, _ umDeviceToken: String) -> ZZWKWebVC {
-        let webVc = ZZWKWebVC()
+        let webVc = self.init()
         webVc.phoneNumber = phone
         webVc.phoneEncrypt = aesPhone
         webVc.userId = userLoginId
@@ -63,7 +63,7 @@ open class ZZWKWebVC: UIViewController {
     }
      ///初始化方法  一般的h5，只需要加载列入协议等
     open class func zz_wkWeb(loadUrl: String) -> ZZWKWebVC {
-        let webVc = ZZWKWebVC()
+        let webVc = self.init()
         webVc.loadType = .rules
         webVc.url = loadUrl
         return webVc

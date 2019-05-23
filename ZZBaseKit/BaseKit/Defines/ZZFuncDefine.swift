@@ -8,20 +8,10 @@
 
 import UIKit
 
-
- // MARK: ------------------------- 判断设备机型 --------------
+// MARK: ------------------------- 判断设备机型 --------------
 /// 判断是否是齐刘海的机型
 public func zz_isIphonexType() -> Bool {
-    if #available(iOS 11, *) {
-        guard let w = UIApplication.shared.delegate?.window, let unwrapedWindow = w else {
-            return false
-        }
-        if unwrapedWindow.safeAreaInsets.left > 0 || unwrapedWindow.safeAreaInsets.bottom > 0 {
-            print(unwrapedWindow.safeAreaInsets)
-            return true
-        }
-    }
-    return false
+    return (zz_isIphoneX() || zz_isIphoneXR() || zz_isIphoneXSMAX())
 }
 
 /// 判断是否是iPad

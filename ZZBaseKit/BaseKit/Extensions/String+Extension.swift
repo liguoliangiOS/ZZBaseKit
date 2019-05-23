@@ -74,6 +74,16 @@ public extension String {
         }
     }
     
+    var zz_isInputName: Bool {
+        if self.count == 0 {
+            return true
+        }
+        let regextestStr: String = "[·•➋➌➍➎➏➐➑➒a-zA-Z0-9\\u4e00-\\u9fa5]{0,30}"
+        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", regextestStr)
+        let isMatch = predicate.evaluate(with: self)
+        return isMatch
+    }
+    
      /////判断只能输入数字
     var zz_isInputNumber: Bool {
         return zz_characterSetWithStr("0123456789\n", self)
