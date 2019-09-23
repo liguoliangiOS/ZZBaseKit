@@ -103,6 +103,16 @@ public extension NSObject {
         }
     }
     
+    ///打电话
+    func zz_telPone(_ phone: String) {
+        if phone != "" && phone != " " && phone.count > 1  {
+            let telP = phone.replacingOccurrences(of:" ", with: "")
+            let phoneStr = "tel://" + telP
+            let phoneUrl = URL(string: phoneStr)
+            _ = zz_openUrl(phoneUrl!)
+        }
+    }
+    
     func zz_strEncodingToUtf8(_ str: String) ->  String {
         if str.count > 0 {
             let userved = "!NULL,'()*+,-./:;=?@_~%#[]"

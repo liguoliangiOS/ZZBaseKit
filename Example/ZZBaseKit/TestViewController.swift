@@ -13,20 +13,24 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(zz_isIphonexType())
+        
+        let phoneFiled = ZZTextField.zz_initTextField(fieldType: .IDCAR, limitCount: 18, delegate: self)
+        phoneFiled.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        phoneFiled.backgroundColor = .orange
+        self.view.addSubview(phoneFiled)
     }
     
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    */
+}
 
+
+extension TestViewController: ZZTextFieldDelegate {
+    
+    func zz_textFiledEndEditing(textField: ZZTextField) {
+        
+        print(textField.text)
+    }
+    
 }

@@ -11,7 +11,7 @@ import UIKit
 public extension UILabel {
     
     /** 快速创建 label **/
-    class func zz_label(text:String, textColor:UIColor, font:UIFont) -> UILabel {
+    class func zz_label(text:String, textColor:UIColor, font:UIFont) -> Self {
         let label = self.init()
         label.text = text
         label.textColor = textColor
@@ -20,7 +20,7 @@ public extension UILabel {
     }
     
     /** 创建 label 设置对齐方式 **/
-    class func zz_label(text:String, textColor:UIColor, font:UIFont, textAlignment:NSTextAlignment) -> UILabel {
+    class func zz_label(text:String, textColor:UIColor, font:UIFont, textAlignment:NSTextAlignment) -> Self {
         let label = zz_label(text: text, textColor: textColor, font: font)
         label.textAlignment = textAlignment
         return label
@@ -29,7 +29,7 @@ public extension UILabel {
     
     
     /** 创建 label 设置行数 **/
-    class func zz_label(text:String, textColor:UIColor, font:UIFont, numberOfLines:NSInteger) -> UILabel {
+    class func zz_label(text:String, textColor:UIColor, font:UIFont, numberOfLines:NSInteger) -> Self {
         let label = zz_label(text: text, textColor: textColor, font: font)
         label.numberOfLines = numberOfLines
         return label
@@ -38,7 +38,7 @@ public extension UILabel {
     
     
     /** 创建 label 设置背景色 **/
-    class func zz_label(text:String, textColor:UIColor, font:UIFont, backgroundColor:UIColor) -> UILabel {
+    class func zz_label(text:String, textColor:UIColor, font:UIFont, backgroundColor:UIColor) -> Self {
         let label = zz_label(text: text, textColor: textColor, font: font)
         label.backgroundColor = backgroundColor
         return label
@@ -46,7 +46,7 @@ public extension UILabel {
     
     
     /** 创建 label 设置对齐方式 背景色 **/
-    class func zz_label(text:String, textColor:UIColor, font:UIFont, backgroundColor:UIColor, textAlignment:NSTextAlignment ) -> UILabel {
+    class func zz_label(text:String, textColor:UIColor, font:UIFont, backgroundColor:UIColor, textAlignment:NSTextAlignment ) -> Self {
         let label = zz_label(text: text, textColor: textColor, font: font, textAlignment:textAlignment)
         label.backgroundColor = backgroundColor
         return label

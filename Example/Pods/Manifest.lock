@@ -1,18 +1,24 @@
 PODS:
-  - ZZBaseKit (0.1.5):
-    - ZZBaseKit/Component (= 0.1.5)
-    - ZZBaseKit/Defines (= 0.1.5)
-    - ZZBaseKit/DeviceInfo (= 0.1.5)
-    - ZZBaseKit/Extensions (= 0.1.5)
-    - ZZBaseKit/Tools (= 0.1.5)
-  - ZZBaseKit/Component (0.1.5):
+  - ZZBaseKit (0.2.5):
+    - ZZBaseKit/Component (= 0.2.5)
+    - ZZBaseKit/CryptManager (= 0.2.5)
+    - ZZBaseKit/Defines (= 0.2.5)
+    - ZZBaseKit/DeviceInfo (= 0.2.5)
+    - ZZBaseKit/Extensions (= 0.2.5)
+    - ZZBaseKit/KeyChain (= 0.2.5)
+    - ZZBaseKit/Tools (= 0.2.5)
+  - ZZBaseKit/Component (0.2.5):
     - ZZBaseKit/Defines
+    - ZZBaseKit/DeviceInfo
     - ZZBaseKit/Extensions
+    - ZZBaseKit/KeyChain
     - ZZBaseKit/Tools
-  - ZZBaseKit/Defines (0.1.5)
-  - ZZBaseKit/DeviceInfo (0.1.5)
-  - ZZBaseKit/Extensions (0.1.5)
-  - ZZBaseKit/Tools (0.1.5)
+  - ZZBaseKit/CryptManager (0.2.5)
+  - ZZBaseKit/Defines (0.2.5)
+  - ZZBaseKit/DeviceInfo (0.2.5)
+  - ZZBaseKit/Extensions (0.2.5)
+  - ZZBaseKit/KeyChain (0.2.5)
+  - ZZBaseKit/Tools (0.2.5)
 
 DEPENDENCIES:
   - ZZBaseKit (from `../`)
@@ -22,8 +28,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZZBaseKit: c4d49b60d16c366cc67481121a9b52e935b0d895
+  ZZBaseKit: dbb204f59327a782e436e1d40f99555d644fba88
 
 PODFILE CHECKSUM: d01cf707a95120d5465ccf83ab61cb0f5d287581
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.0

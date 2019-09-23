@@ -66,13 +66,13 @@ public extension UIView {
         }
     }
     
-    class func zz_view(_ backgroundColor: UIColor) -> UIView {
+    class func zz_view(_ backgroundColor: UIColor) -> Self {
         let view = self.init()
         view.backgroundColor = backgroundColor
         return view
     }
     
-    class func zz_view(_ backgroundColor: UIColor, _ cornerRadius: CGFloat) -> UIView {
+    class func zz_view(_ backgroundColor: UIColor, _ cornerRadius: CGFloat) -> Self {
         let view = self.init()
         view.backgroundColor = backgroundColor
         view.layer.masksToBounds = true

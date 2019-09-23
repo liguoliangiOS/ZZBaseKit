@@ -11,7 +11,7 @@ import UIKit
 public extension UIButton {
     
     /**设置标题点击**/
-    class func zz_button(title:String, titleColor:UIColor, font:UIFont, target:Any , action:Selector) -> UIButton {
+    class func zz_button(title:String, titleColor:UIColor, font:UIFont, target:Any , action:Selector) -> Self {
         let button = self.init(type: .custom)
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
@@ -20,21 +20,21 @@ public extension UIButton {
         return button
     }
     /**设置圆角和标题**/
-    class func zz_button(title:String, titleColor:UIColor, font:UIFont, cornerRadius:CGFloat, target:Any , action:Selector) -> UIButton {
+    class func zz_button(title:String, titleColor:UIColor, font:UIFont, cornerRadius:CGFloat, target:Any , action:Selector) -> Self {
         let button = zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
         button.layer.masksToBounds = true
         button.layer.cornerRadius =  cornerRadius
         return button
     }
     /**设置背景颜色和标题**/
-    class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundColor:UIColor, cornerRadius:CGFloat, target:Any , action:Selector) -> UIButton {
+    class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundColor:UIColor, cornerRadius:CGFloat, target:Any , action:Selector) -> Self {
         
         let button = zz_button(title: title, titleColor: titleColor, font: font ,cornerRadius:cornerRadius, target:target, action:action)
         button.backgroundColor = backgroundColor
         return button
     }
     /**设置背景图片和标题**/
-     class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundImage:String, target:Any , action:Selector) -> UIButton {
+     class func zz_button(title:String, titleColor:UIColor, font:UIFont, backgroundImage:String, target:Any , action:Selector) -> Self {
         let button = zz_button(title: title, titleColor: titleColor, font: font, target: target, action: action)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .normal)
         button.setBackgroundImage(UIImage(named: backgroundImage), for: .highlighted)

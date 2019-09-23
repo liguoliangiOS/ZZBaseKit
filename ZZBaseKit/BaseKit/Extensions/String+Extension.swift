@@ -79,9 +79,7 @@ public extension String {
             return true
         }
         let regextestStr: String = "[·•➋➌➍➎➏➐➑➒a-zA-Z0-9\\u4e00-\\u9fa5]{0,30}"
-        let predicate: NSPredicate = NSPredicate(format: "SELF MATCHES%@", regextestStr)
-        let isMatch = predicate.evaluate(with: self)
-        return isMatch
+        return zz_predicate(regextestStr)
     }
     
      /////判断只能输入数字
@@ -112,7 +110,23 @@ public extension String {
         }
         return zz_predicate(String(format: "^(?=.*[a-zA-Z0-9].*)(?=.*[a-zA-Z\\W].*)(?=.*[0-9\\W].*).{%d,%d}$", min, max))
     }
+    ///限制输入姓名格式为 中文数字英文和·•
+    func zz_isInputNameOutLimit(_ maxLimit: Int) -> Bool {
+        if self.count == 0 {
+            return true
+        }
+        let regextestStr: String = "[·•➋➌➍➎➏➐➑➒a-zA-Z0-9\\u4e00-\\u9fa5]{0,\(maxLimit)}"
+        return zz_predicate(regextestStr)
+    }
     
+    ///限制输入姓名格式为 中文数字英文和·•
+    func zz_isInputOutSpecialLimit(_ maxLimit: Int) -> Bool {
+        if self.count == 0 {
+            return true
+        }
+        let regextestStr: String = "[➋➌➍➎➏➐➑➒a-zA-Z0-9\\u4e00-\\u9fa5]{0,\(maxLimit)}"
+        return zz_predicate(regextestStr)
+    }
     
     func zz_characterSetWithStr(_ characterStr: String, _ judgeText: String) -> Bool {
         let characterSet = NSCharacterSet(charactersIn: characterStr).inverted

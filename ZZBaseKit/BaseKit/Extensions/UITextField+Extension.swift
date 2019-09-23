@@ -11,7 +11,7 @@ import UIKit
 public extension UITextField {
     
     /** 快速创建 textField **/
-    class func zz_textField(textColor: UIColor, font: UIFont, placeholder: String) -> UITextField {
+    class func zz_textField(textColor: UIColor, font: UIFont, placeholder: String) -> Self {
         let textField = self.init()
         textField.textColor = textColor
         textField.font = font
@@ -32,8 +32,13 @@ public extension UITextField {
     /** 设置 placeHolder的字体的颜色 **/
     
     func zz_textFieldPlaceholder(_ color: UIColor, _ font: UIFont) {
-        self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
-        self.setValue(font, forKeyPath:"_placeholderLabel.font")
+        if #available(iOS 13.0, *) {
+           let arrStr = NSMutableAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font])
+           self.attributedPlaceholder = arrStr
+        } else {
+           self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
+           self.setValue(font, forKeyPath:"_placeholderLabel.font")
+        }
     }
     
     

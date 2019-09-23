@@ -1,6 +1,6 @@
 {
   "name": "ZZBaseKit",
-  "version": "0.1.5",
+  "version": "0.2.5",
   "summary": "方便使用的基础库",
   "description": "把常用的方法做了一个整合，形成一个方便使用的基础库",
   "homepage": "https://github.com/liguoliangiOS/ZZBaseKit",
@@ -11,7 +11,7 @@
   "authors": "liguoliang",
   "source": {
     "git": "https://github.com/liguoliangiOS/ZZBaseKit.git",
-    "tag": "0.1.5"
+    "tag": "0.2.5"
   },
   "swift_versions": "5.0",
   "platforms": {
@@ -35,6 +35,14 @@
       "source_files": "ZZBaseKit/BaseKit/DeviceInfo"
     },
     {
+      "name": "KeyChain",
+      "source_files": "ZZBaseKit/BaseKit/KeyChain"
+    },
+    {
+      "name": "CryptManager",
+      "source_files": "ZZBaseKit/BaseKit/CryptManager"
+    },
+    {
       "name": "Component",
       "dependencies": {
         "ZZBaseKit/Defines": [
@@ -45,9 +53,16 @@
         ],
         "ZZBaseKit/Tools": [
 
+        ],
+        "ZZBaseKit/DeviceInfo": [
+
+        ],
+        "ZZBaseKit/KeyChain": [
+
         ]
       },
       "source_files": "ZZBaseKit/BaseKit/Component"
     }
-  ]
+  ],
+  "swift_version": "5.0"
 }
