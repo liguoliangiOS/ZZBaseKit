@@ -256,7 +256,10 @@ extension ZZDeviceInfo {
         case "iPhone11,8":                          return "iPhone XR"
         case "iPhone11,2":                          return "iPhone XS"
         case "iPhone11,6":                          return "iPhone XS Max"
-            
+        case "iPhone12,1":                          return "iPhone 11"
+        case "iPhone12,3":                          return "iPhone 11 Pro"
+        case "iPhone12,5":                          return "iPhone 11 Pro Max"
+
         ///iPad
         case "iPad1,1":                             return "iPad"
         case "iPad1,2":                             return "iPad 3G"
@@ -321,7 +324,7 @@ extension ZZDeviceInfo {
         case "i386":                                return "Simulator"
         case "x86_64":                              return "Simulator"
             
-        default:                                    return "unknow"
+        default:                                    return identifier
         }
     }
     
